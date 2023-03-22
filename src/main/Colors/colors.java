@@ -17,17 +17,33 @@ public class colors {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     //--------------------------------------------------------------------------------
-    // Constructor that takes in the color and text to be printed and color prints it
-    public static void colorText(String text, String color) {
+    // Static method that takes in the color and text to be printed and color and returns the colored string
+    public static String colorText(String text, String color) {
         switch (color.toLowerCase()) {
-            case "black" -> System.out.println(ANSI_BLACK + text + ANSI_RESET);
-            case "red" -> System.out.println(ANSI_RED + text + ANSI_RESET);
-            case "green" -> System.out.println(ANSI_GREEN + text + ANSI_RESET);
-            case "yellow" -> System.out.println(ANSI_YELLOW + text + ANSI_RESET);
-            case "blue" -> System.out.println(ANSI_BLUE + text + ANSI_RESET);
-            case "purple" -> System.out.println(ANSI_PURPLE + text + ANSI_RESET);
-            case "cyan" -> System.out.println(ANSI_CYAN + text + ANSI_RESET);
-            default -> System.out.println(ANSI_RESET + text + ANSI_RESET);
+            case "black" -> {
+                return (ANSI_BLACK + text + ANSI_RESET);
+            }
+            case "red" -> {
+                return (ANSI_RED + text + ANSI_RESET);
+            }
+            case "green" -> {
+                return (ANSI_GREEN + text + ANSI_RESET);
+            }
+            case "yellow" -> {
+                return (ANSI_YELLOW + text + ANSI_RESET);
+            }
+            case "blue" -> {
+                return (ANSI_BLUE + text + ANSI_RESET);
+            }
+            case "purple" -> {
+                return (ANSI_PURPLE + text + ANSI_RESET);
+            }
+            case "cyan"-> {
+                return (ANSI_CYAN + text + ANSI_RESET);
+            }
+            default -> {
+                return (ANSI_RESET + text + ANSI_RESET);
+            }
         }
     }
 

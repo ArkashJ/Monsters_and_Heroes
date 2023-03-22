@@ -1,13 +1,35 @@
 package main.Characters;
 
-import main.Characters.Characters;
-import main.Characters.IMonsters;
+import static main.Colors.colors.colorText;
+/*
+    * This is a monsters class that uses the characters abstract class and IMonsters interface to create a monster
+    * The monster has the following attributes:
+    * • A name
+    * • A level with an amount of experience points
+    * • HP (hit points, the monster’s in battle)
+    * • A base damage value
+    * • A defence value
+    * • A dodge agility value
+
+    * The monster class has getters and setters defined as follows:
+    * Getters:
+    * • getHP() - returns the monster’s HP
+    * • getBaseDamage() - returns the monster’s base damage
+    * • getDefenseValue() - returns the monster’s defence value
+
+    * Setters:
+    * • setBaseDamage() - sets the monster’s base damage
+    * • setDefenceValue() - sets the monster’s defence value
+    * • setDodgeAgility() - sets the monster’s dodge agility value
+
+    * printStats() - prints the monster’s stats
+ */
 
 public class Monsters extends Characters implements IMonsters {
     private double HP;
-    private final double baseDamage;
-    private final double defenceValue;
-    private final double dodgeAgility;
+    private double baseDamage;
+    private double defenceValue;
+    private double dodgeAgility;
 
     public Monsters(String name, int level, double HP, double baseDamage, double defenceValue, double dodgeAgility){
         super(name, level, HP);
@@ -16,26 +38,9 @@ public class Monsters extends Characters implements IMonsters {
         this.dodgeAgility = dodgeAgility;
     }
     //---------------------------------------------------------------------------------------------------------------------------------------
-
-
     @Override
     public double getHP() {
         return super.getHP();
-    }
-
-    public void attack(){
-        // attack condition for the monsters
-    }
-    //---------------------------------------------------------------------------------------------------------------------------------------
-
-
-    public void dodge(){
-        //dodge condition
-    }
-    //---------------------------------------------------------------------------------------------------------------------------------------
-
-    public void defence(){
-        //defence condition
     }
     //---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -49,14 +54,33 @@ public class Monsters extends Characters implements IMonsters {
     }
     //---------------------------------------------------------------------------------------------------------------------------------------
 
-    public double getDodgeAgility(){
+    public double getDodge(){
         return dodgeAgility;
     }
-    //---------------------------------------------------------------------------------------------------------------------------------------
 
+    public void setBaseDamage(double baseDamage) {
+        this.baseDamage = baseDamage;
+    }
+
+    public void setDefenceValue(double defenceValue) {
+        this.defenceValue = defenceValue;
+    }
+
+    public void setDodgeAgility(double dodgeAgility) {
+        this.dodgeAgility = dodgeAgility;
+    }
+    //---------------------------------------------------------------------------------------------------------------------------------------
     public void printStats(){
         System.out.println("The stats for this monster are as follows: ");
-        System.out.printf("Name: %s Level: %d HP:%,.3f Base-Damage:%,.3f Defence-Value:%,.3f Dodge-Agility:%,.3f", name, level, HP, baseDamage, defenceValue, dodgeAgility);
+        String tempName = colorText(String.format("Name: %s", name), "black");
+        String tempLevel = colorText(String.format("Level: %d", level), "red");
+        String tempHP = colorText(String.format("HP: %,.3f", HP), "green");
+        String tempBaseDamage = colorText(String.format("Base-Damage: %,.3f", baseDamage), "blue");
+        String tempDefenceValue = colorText(String.format("Defence-Value: %,.3f", defenceValue), "yellow");
+        String tempDodgeAgility = colorText(String.format("Dodge-Agility: %,.3f", dodgeAgility), "purple");
+
+        System.out.println(tempName + "  |  " + tempLevel + "  |  " + tempHP + "  |  " + tempBaseDamage +
+                "  |  " + tempDefenceValue + "  |  " + tempDodgeAgility + "  |  ");
     }
     //---------------------------------------------------------------------------------------------------------------------------------------
 }

@@ -44,7 +44,7 @@ public class FightRules implements IFightRules {
 
     @Override
     public double getDodgeChance(Monsters monsters) {
-        double dodgeChance = monsters.getDodgeChance();
+        double dodgeChance = monsters.getDodge();
         return dodgeChance*0.01;
     }
 
@@ -73,5 +73,13 @@ public class FightRules implements IFightRules {
         double heroMP = hero.getMP();
         hero.setHP(heroHP*1.1);
         hero.setMP(heroMP*1.1);
+    }
+
+    public int setNumHeroes(int numHeroes){
+        boolean b = numHeroes >= 1 && numHeroes <= 3;
+        if (b){
+            return numHeroes;
+        }
+        return 0;
     }
 }
