@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99312434-18f3-4b0c-b185-5f8d70288819" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/fileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Positions/Positions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Positions/Positions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/controls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Characters/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Characters/Characters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Characters/Heroes/Heroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Characters/Heroes/Heroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game/FightRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game/FightRules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/World/IWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/World/IWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/World/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/World/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,6 +62,26 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="fileReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.fileReader" />
+      <module name="Monsters_and_Heroes_hw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.fileReader" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +92,7 @@
       <updated>1679491533159</updated>
       <workItem from="1679491534271" duration="2530000" />
       <workItem from="1679495157438" duration="784000" />
-      <workItem from="1679495954764" duration="18649000" />
+      <workItem from="1679495954764" duration="24369000" />
     </task>
     <servers />
   </component>

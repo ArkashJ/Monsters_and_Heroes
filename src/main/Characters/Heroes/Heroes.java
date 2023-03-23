@@ -50,11 +50,10 @@ public class Heroes extends Characters implements IHeroes {
     private Positions position;
 
     //-------------------------------------------------------------------------------------------------------------------
-    public Heroes(String name, int level, int experience, double HP, double MP, double strength, double agility,
-                  double dexterity, int gold, Positions position){
+    public Heroes(String name, double MP, double strength, double agility, double dexterity,
+                  int gold, int level, double HP, Positions position){
         super(name, level, HP);
         this.MP = MP;
-        this.experience = experience;
         this.strength = strength;
         this.agility = agility;
         this.dexterity = dexterity;
@@ -78,7 +77,7 @@ public class Heroes extends Characters implements IHeroes {
 
     public double getAgility() { return agility; }
 
-    public int getExperience() { return experience;}
+    public int getExperience() { return level*10;}
     public int getGold(){
         return gold;
     }

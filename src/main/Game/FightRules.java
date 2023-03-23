@@ -8,13 +8,13 @@ public class FightRules implements IFightRules {
     //---------------------------------------------------------------------------------------------------------
     // rules to find spell damage based on the spell the hero has in their inventory
     // Hero dexterity and spell base damage are used to calculate the spell damage
-    public double spellDamage(Heroes hero){
-        // spell damage calculation
-        Inventory spell = hero.getInventory().getSpell();
-        double spellBaseDamage = spell.getBaseDamage();
-        double heroDexterity = hero.getDexterity();
-        return (spellBaseDamage + heroDexterity /10000 * spellBaseDamage);
-    }
+//    public double spellDamage(Heroes hero){
+//        // spell damage calculation
+//        Inventory spell = hero.getInventory().getSpell();
+//        double spellBaseDamage = spell.getBaseDamage();
+//        double heroDexterity = hero.getDexterity();
+//        return (spellBaseDamage + heroDexterity /10000 * spellBaseDamage);
+//    }
     //---------------------------------------------------------------------------------------------------------
     // Find the hero's and monster's HP based on their level
     // For heroes, this value is used to reset HP on level up
@@ -37,13 +37,13 @@ public class FightRules implements IFightRules {
     }
     //---------------------------------------------------------------------------------------------------------
     // rules to find hero's attack damage if they have a weapon in their inventory
-    public double attackDamage(Heroes hero){
-        // attack damage calculation
-        Inventory weapon = hero.getInventory().getWeapon();
-        double weaponDamage = weapon.getDamage();
-        double heroStrength = hero.getStrength();
-        return ((heroStrength + weaponDamage) * 0.05);
-    }
+//    public double attackDamage(Heroes hero){
+//        // attack damage calculation
+//        Inventory weapon = hero.getInventory().getWeapon();
+//        double weaponDamage = weapon.getDamage();
+//        double heroStrength = hero.getStrength();
+//        return ((heroStrength + weaponDamage) * 0.05);
+//    }
     //---------------------------------------------------------------------------------------------------------
     // dodge chance for heroes and monsters
     @Override
@@ -85,21 +85,23 @@ public class FightRules implements IFightRules {
     // amount of gold hero gains after beating a monster
     public void goldGain(Heroes hero, Monsters monster){
         int monsterLevel = monster.getLevel();
-        hero.setGold(monsterLevel*100);
+        int heroGold = hero.getGold();
+        hero.setGold(heroGold + monsterLevel*100);
     }
     //---------------------------------------------------------------------------------------------------------
     // Hero experience gain
     public void expGain(Heroes hero, Monsters monster){
         int monsterLevel = monster.getLevel();
-        hero.setExperience(monsterLevel*2);
+        int heroExp = hero.getExperience();
+        hero.setExperience(heroExp + monsterLevel*2);
     }
     //---------------------------------------------------------------------------------------------------------
     // The monster's level is equal to the highest level of the heroes in the team
     public void determineMonsterLevel(ArrayList<Heroes> heroesList, Monsters monsters){
         int maxLevel = 0;
-        for(int i = 0; i < heroesList.size(); i++){
-            int heroLevel = heroesList.get(i).getLevel();
-            if (heroLevel > maxLevel){
+        for (Heroes heroes : heroesList) {
+            int heroLevel = heroes.getLevel();
+            if (heroLevel > maxLevel) {
                 maxLevel = heroLevel;
             }
         }
@@ -111,10 +113,10 @@ public class FightRules implements IFightRules {
 
     //---------------------------------------------------------------------------------------------------------
     // gold gained by selling an item
-    public int goldSellingItem(Heroes hero, Inventory item){
-        int itemPrice = item.getPrice();
-        return itemPrice/2;
-    }
+//    public int goldSellingItem(Heroes hero, Inventory item){
+//        int itemPrice = item.getPrice();
+//        return itemPrice/2;
+//    }
 
     //---------------------------------------------------------------------------------------------------------
     // Rules to set the total number of heroes in the game = monsters in the game

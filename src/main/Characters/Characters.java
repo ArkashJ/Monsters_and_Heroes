@@ -30,5 +30,6 @@ public abstract class Characters implements ICharacters{
     public void setHP(double HP){
         this.HP = HP;
     }
+
     public abstract void printStats();
 }
