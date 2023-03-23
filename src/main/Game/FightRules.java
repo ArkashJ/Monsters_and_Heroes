@@ -2,8 +2,9 @@ package main.Game;
 import main.Characters.Heroes.Heroes;
 import main.Characters.Monsters.Monsters;
 
-public class FightRules implements IFightRules {
+import java.util.ArrayList;
 
+public class FightRules implements IFightRules {
     //---------------------------------------------------------------------------------------------------------
     // rules to find spell damage based on the spell the hero has in their inventory
     // Hero dexterity and spell base damage are used to calculate the spell damage
@@ -22,7 +23,7 @@ public class FightRules implements IFightRules {
         int heroLevel = hero.getLevel();
         return heroLevel*100;
     }
-
+    //---------------------------------------------------------------------------------------------------------
     @Override
     public double getHP(Monsters monster) {
         int monsterLevel = monster.getLevel();
@@ -50,7 +51,7 @@ public class FightRules implements IFightRules {
         double heroAgility = hero.getAgility();
         return heroAgility * 0.002;
     }
-
+    //---------------------------------------------------------------------------------------------------------
     @Override
     public double getDodgeChance(Monsters monsters) {
         double dodgeChance = monsters.getDodge();
@@ -80,7 +81,6 @@ public class FightRules implements IFightRules {
         hero.setHP(heroHP*1.1);
         hero.setMP(heroMP*1.1);
     }
-
     //---------------------------------------------------------------------------------------------------------
     // amount of gold hero gains after beating a monster
     public void goldGain(Heroes hero, Monsters monster){
@@ -94,9 +94,19 @@ public class FightRules implements IFightRules {
         hero.setExperience(monsterLevel*2);
     }
     //---------------------------------------------------------------------------------------------------------
-    public void determineMonsterLevel(Team<Heroes> hero, Monsters monsters){
-        int heroLevel = hero.getLevel();
+    // The monster's level is equal to the highest level of the heroes in the team
+    public void determineMonsterLevel(ArrayList<Heroes> heroesList, Monsters monsters){
+        int maxLevel = 0;
+        for(int i = 0; i < heroesList.size(); i++){
+            int heroLevel = heroesList.get(i).getLevel();
+            if (heroLevel > maxLevel){
+                maxLevel = heroLevel;
+            }
+        }
 
+        if (maxLevel > 0){
+            monsters.setLevel(maxLevel);
+        }
     }
 
     //---------------------------------------------------------------------------------------------------------
@@ -108,7 +118,7 @@ public class FightRules implements IFightRules {
 
     //---------------------------------------------------------------------------------------------------------
     // Rules to set the total number of heroes in the game = monsters in the game
-    public int setNumHeroes(int numHeroes){
+    public static int setNumHeroes(int numHeroes){
         boolean b = numHeroes >= 1 && numHeroes <= 3;
         if (b){
             return numHeroes;

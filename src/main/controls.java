@@ -1,7 +1,4 @@
-package code.src;
-
-import Characters.Players;
-
+package main;
 
 public class controls {
     private char up;

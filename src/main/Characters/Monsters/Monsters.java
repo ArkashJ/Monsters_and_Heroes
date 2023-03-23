@@ -29,6 +29,7 @@ import static main.Colors.colors.colorText;
 
 public class Monsters extends Characters implements IMonsters {
     private double HP;
+    private int level;
     private double baseDamage;
     private double defenceValue;
     private double dodgeAgility;
@@ -58,6 +59,14 @@ public class Monsters extends Characters implements IMonsters {
 
     public double getDodge(){
         return dodgeAgility;
+    }
+
+    public int getLevel(){
+        return level;
+    }
+
+    public void setLevel(int level){
+        this.level = level;
     }
 
     public void setBaseDamage(double baseDamage) {
