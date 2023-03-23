@@ -1,10 +1,9 @@
-package main.Characters;
+package main.Characters.Heroes;
 
+import main.Characters.Characters;
 import main.Positions.Positions;
-import main.Colors.colors;
 
 import static main.Colors.colors.colorText;
-
 /*
  * This is a heroes class that uses the characters abstract class and IHeroes interface to create a hero
  * The monster has the following attributes:
@@ -17,7 +16,9 @@ import static main.Colors.colors.colorText;
  * • An agility value
  * • An amount of gold
  * • An inventory of items
+
  * The heroes class has getters and setters defined as follows:
+
  * Getters:
  * • getHP() - returns the hero’s HP
  * • getMP() - returns the hero’s MP
@@ -33,26 +34,27 @@ import static main.Colors.colors.colorText;
  * • setDexterity() - sets the hero’s dexterity value
  * • setAgility() - sets the hero’s agility value
  * • setMP() - sets the hero’s MP
- *
- * printStats() - prints the monster’s stats
 
+ * printStats() - prints the heroes stats
  */
 public class Heroes extends Characters implements IHeroes {
     private String name;
     private int level;
+    private int experience;
     private double HP;
     private double MP;
     private double strength;
     private double agility;
     private double dexterity;
-    private final int gold;
+    private int gold;
     private Positions position;
 
     //-------------------------------------------------------------------------------------------------------------------
-    public Heroes(String name, int level, double HP, double MP, double strength, double agility,
+    public Heroes(String name, int level, int experience, double HP, double MP, double strength, double agility,
                   double dexterity, int gold, Positions position){
         super(name, level, HP);
         this.MP = MP;
+        this.experience = experience;
         this.strength = strength;
         this.agility = agility;
         this.dexterity = dexterity;
@@ -76,6 +78,7 @@ public class Heroes extends Characters implements IHeroes {
 
     public double getAgility() { return agility; }
 
+    public int getExperience() { return experience;}
     public int getGold(){
         return gold;
     }
@@ -105,6 +108,10 @@ public class Heroes extends Characters implements IHeroes {
     public void setMP(double MP) {
         this.MP = MP;
     }
+
+    public void setGold(int gold) { this.gold = gold;}
+
+    public void setExperience(int experience) { this.experience = experience; }
     //------------------------------------------------------------------------------------------------------------------------
     //print player statistics before the game starts
     public void printStats(){

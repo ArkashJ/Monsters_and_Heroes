@@ -1,7 +1,6 @@
 package main.Game;
-import main.Characters.Characters;
-import main.Characters.Heroes;
-import main.Characters.Monsters;
+import main.Characters.Heroes.Heroes;
+import main.Characters.Monsters.Monsters;
 
 public interface IFightRules {
     int setNumHeroes(int numHeroes);

@@ -1,4 +1,4 @@
-package main.Characters;
+package main.Characters.Heroes;
 
 import main.Positions.Positions;
 

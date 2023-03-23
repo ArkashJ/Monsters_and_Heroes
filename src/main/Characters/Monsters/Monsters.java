@@ -1,4 +1,6 @@
-package main.Characters;
+package main.Characters.Monsters;
+
+import main.Characters.Characters;
 
 import static main.Colors.colors.colorText;
 /*
