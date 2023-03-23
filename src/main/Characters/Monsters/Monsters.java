@@ -34,7 +34,7 @@ public class Monsters extends Characters implements IMonsters {
     private double defenceValue;
     private double dodgeAgility;
 
-    public Monsters(String name, int level, double HP, double baseDamage, double defenceValue, double dodgeAgility){
+    public Monsters(String name, int level, double baseDamage, double defenceValue, double dodgeAgility, double HP){
         super(name, level, HP);
         this.baseDamage = baseDamage;
         this.defenceValue = defenceValue;

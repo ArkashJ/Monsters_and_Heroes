@@ -1,5 +1,7 @@
 package main;
 import main.Characters.Heroes.Heroes;
+import main.Characters.Monsters.IMonsters;
+import main.Characters.Monsters.Monsters;
 import main.Positions.Positions;
 
 import java.io.BufferedInputStream;
@@ -9,6 +11,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static main.LoadFile.readFile;
 
 // Class that reads the txt files in the instructions folder, iterates over them and returns a list of arrays
 public class fileReader {
@@ -85,40 +89,27 @@ public class fileReader {
         }
         return HeroList;
     }
-
     // ---------------------------------------------------------------------------------------------------------------
-    // The readFile function returns a list containing the array of strings read from the txt files
-    public static List<String[]> readFile(String fileName){
-        List<Object> list = new ArrayList<>();
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(fileName));
-            String line = reader.readLine();
-            while (line != null){
-                list.add(line);
-                line = reader.readLine();
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        List<String[]> myList = new ArrayList<String[]>(); // list of arrays
-
-        for (Object o : list){
-            String[] arr = o.toString().split("\\s+");
-            myList.add(arr);
-        }
-
-        for (String[] arr : myList){
-            System.out.println(Arrays.toString(arr));
-        }
-
-        return myList;
+    public static void storeMonsters(){
+        // Format of txt: Name/level/damage/defense/dodge chance
+        // Format of constructor:
+        // Monsters(String name, int level, double baseDamage, double defenceValue, double dodgeAgility, double HP)
+        // Format of array: [0] = name, [1] = level, [2] = damage, [3] = defense, [4] = dodge chance
+        // 5 = HP. HP will be 100*level
+        ArrayList<Monsters> dragons = loadMonsters(getDragonsList());
+        ArrayList<Monsters> spirits = loadMonsters(getSpiritsList());
+        ArrayList<Monsters> exoskeletons = loadMonsters(getExoskeletonsList());
     }
-    // ---------------------------------------------------------------------------------------------------------------
-    //    // Main function to test whether the files have been read or not
-    //    public static void main(String[] args) {
-    //        makeLists();
-    //    }
+
+    public static ArrayList<Monsters> loadMonsters(List<String[]> list) {
+        ArrayList<Monsters> MonsterList = new ArrayList<>();
+        for (String[] arr : list){
+            Monsters monster = new Monsters(arr[0], Integer.parseInt(arr[1]), Double.parseDouble(arr[2]),
+                    Double.parseDouble(arr[3]), Double.parseDouble(arr[4]), Double.parseDouble(arr[1])*100);
+            System.out.println(monster);
+            MonsterList.add(monster);
+        }
+        return MonsterList;
+    }
     // ---------------------------------------------------------------------------------------------------------------
 }
