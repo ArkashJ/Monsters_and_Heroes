@@ -9,6 +9,11 @@ public class Positions {
     private int x_pos;
     private int y_pos;
 
+    public Positions(){
+        this.x_pos = 0;
+        this.y_pos = 0;
+    }
+
     public Positions(int x_pos, int y_pos){
         this.x_pos = x_pos;
         this.y_pos = y_pos;
