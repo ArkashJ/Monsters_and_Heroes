@@ -1,6 +1,8 @@
-package main.Items;
+package main.Items.Spells;
 
-public class FireSpells extends Spells{
+import main.Items.Spells.Spells;
+
+public class FireSpells extends Spells {
     private double extraDefenseReduction;
     public FireSpells(String name, int price, int level, double damage, int manaCost, String spellType, double extraDefenseReduction) {
         super(name, price, level, damage, manaCost, "FireSpell");

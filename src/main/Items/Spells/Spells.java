@@ -1,8 +1,10 @@
-package main.Items;
+package main.Items.Spells;
+
+import main.Items.Items;
 
 import static main.Colors.colors.colorText;
 
-public class Spells extends Items{
+public class Spells extends Items {
     // A spell has a name, a price, a level, a damage value, a mana cost, and a spell type.
     // A hero will require at least the mana cost amount of MP to cast the spell.
     // Therefore, if a hero has no MP, that hero cannot cast any spells

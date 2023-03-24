@@ -1,4 +1,6 @@
-package main.Items;
+package main.Items.Spells;
+
+import main.Items.Spells.Spells;
 
 public class LightningSpells extends Spells {
     private double extraDodgeChance;
