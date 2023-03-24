@@ -2,6 +2,10 @@ package main;
 import main.Characters.Heroes.Heroes;
 import main.Characters.Monsters.IMonsters;
 import main.Characters.Monsters.Monsters;
+import main.Items.Armors;
+import main.Items.Potions;
+import main.Items.Spells.Spells;
+import main.Items.Weapons;
 import main.Positions.Positions;
 
 import java.io.BufferedInputStream;
@@ -66,6 +70,8 @@ public class fileReader {
         return readFile("src/Instructions/Weapons.txt");
     }
     // ---------------------------------------------------------------------------------------------------------------
+
+    // Function that loads and stores the heroes
     public static void storeHeroes(){
         // Format of txt: Name/mana/strength/agility/dexterity/starting money/starting experience
         // Format of constructor:
@@ -90,6 +96,7 @@ public class fileReader {
         return HeroList;
     }
     // ---------------------------------------------------------------------------------------------------------------
+    // Function that loads and stores the monsters
     public static void storeMonsters(){
         // Format of txt: Name/level/damage/defense/dodge chance
         // Format of constructor:
@@ -110,6 +117,76 @@ public class fileReader {
             MonsterList.add(monster);
         }
         return MonsterList;
+    }
+    // ---------------------------------------------------------------------------------------------------------------
+    // Function that loads and stores the spells
+    public static void storeSpells() {
+        // Format of txt: Name/cost/required level/damage/mana cost
+        // Format of constructor:
+        // FireSpells(String name, int price, int level, double damage, int manaCost, String spellType, double extraDefenseReduction)
+        // Format of array: [0] = name, [1] = cost, [2] = required level, [3] = damage, [4] = mana cost
+        // 5 = spell type, 6 = extra defense reduction
+
+        ArrayList<Spells> fireSpells = loadSpells(getFireSpellsList(), "FireSpell");
+        ArrayList<Spells> iceSpells = loadSpells(getIceSpellsList(), "IceSpell");
+        ArrayList<Spells> lightningSpells = loadSpells(getLightningSpellsList(), "LightningSpell");
+    }
+
+    public static ArrayList<Spells> loadSpells(List<String[]> list, String spellType) {
+        ArrayList<Spells> SpellList = new ArrayList<>();
+        for (String[] arr : list){
+            Spells spell = new Spells(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]),
+                    Double.parseDouble(arr[3]), Integer.parseInt(arr[4]), spellType);
+            System.out.println(spell);
+            SpellList.add(spell);
+        }
+        return SpellList;
+    }
+    // ---------------------------------------------------------------------------------------------------------------
+    // Function that loads and stores the Armor, Weapons and Potions
+    public static void storeArmors(){
+        // Format of txt: Name/cost/required level/damage reduction
+        // Format of constructor:
+        // Armors(String name, int price, int level, double damageReduction)
+        // Format of array: [0] = name, [1] = cost, [2] = required level, [3] = damage reduction
+        List<String[]> armorsList = getArmorsList();
+        ArrayList<Armors> armors = new ArrayList<>();
+
+        for (String [] arr : armorsList){
+            Armors armor = new Armors(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]), Double.parseDouble(arr[3]));
+            System.out.println(armor);
+            armors.add(armor);
+        }
+    }
+    // ---------------------------------------------------------------------------------------------------------------
+    public static void storePotions(){
+        // Format of txt: Name/cost/required level/attribute increase/attribute affected
+        // Format of constructor:
+        // Potions(String name, int price, int level, int effectAmount)
+        // Format of array: [0] = name, [1] = cost, [2] = required level, [3] = effect amount
+        List<String[]> potionsList = getPotionsList();
+        ArrayList<Potions> potions = new ArrayList<>();
+
+        for (String [] arr : potionsList){
+            Potions potion = new Potions(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]), Integer.parseInt(arr[3]));
+            System.out.println(potion);
+            potions.add(potion);
+        }
+    }
+    // ---------------------------------------------------------------------------------------------------------------
+    public static void storeWeapons(){
+        // Format of txt: Name/cost/required level/attribute increase/attribute affected
+        // Format of constructor:
+        // Weapons(String name, int price, int level, double damage, int hands)
+        // Format of array: [0] = name, [1] = cost, [2] = required level, [3] = effect amount
+        List<String[]> weaponsList = getWeaponsList();
+        ArrayList<Weapons> weapons = new ArrayList<>();
+
+        for (String [] arr : weaponsList){
+            Weapons weapon = new Weapons(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]), Double.parseDouble(arr[3]), Integer.parseInt(arr[4]));
+            System.out.println(weapon);
+            weapons.add(weapon);
+        }
     }
     // ---------------------------------------------------------------------------------------------------------------
 }
