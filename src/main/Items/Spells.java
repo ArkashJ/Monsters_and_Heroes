@@ -2,31 +2,16 @@ package main.Items;
 
 import static main.Colors.colors.colorText;
 
-public class Spells {
+public class Spells extends Items{
     // A spell has a name, a price, a level, a damage value, a mana cost, and a spell type.
     // A hero will require at least the mana cost amount of MP to cast the spell.
     // Therefore, if a hero has no MP, that hero cannot cast any spells
     // ----------------------------------------------- Variables -----------------------------------------------
-    private String name;
-    private int price;
-    private int level;
-    private double damage;
-    private int manaCost;
-    private String spellType;
+    protected double damage;
+    protected int manaCost;
+    protected String spellType;
 
     // ----------------------------------------------- Getters -----------------------------------------------
-    public String getName() {
-        return name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
     public double getDamage() {
         return damage;
     }
@@ -39,18 +24,6 @@ public class Spells {
         return spellType;
     }
     // ----------------------------------------------- Setters -----------------------------------------------
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     public void setDamage(double damage) {
         this.damage = damage;
@@ -66,14 +39,11 @@ public class Spells {
 
     // ----------------------------------------------- Constructors -----------------------------------------------
     public Spells(String name, int price, int level, double damage, int manaCost, String spellType) {
-        this.name = name;
-        this.price = price;
-        this.level = level;
+        super(name, price, level);
         this.damage = damage;
         this.manaCost = manaCost;
         this.spellType = spellType;
     }
-
     // ----------------------------------------------- Methods -----------------------------------------------
     public void printStats(){
         System.out.println("The stats for this armor are as follows: ");

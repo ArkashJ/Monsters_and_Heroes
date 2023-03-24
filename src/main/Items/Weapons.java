@@ -2,24 +2,12 @@ package main.Items;
 
 import static main.Colors.colors.colorText;
 
-public class Weapons {
+public class Weapons extends Items {
     // A weapon has a name, a price, a level, a damage value, and the number of hands required to use it
     // ----------------------------------------  Variables  ----------------------------------------
-    private String name;
-    private int price;
-    private int level;
     private double damage;
     private int hands;
     // ----------------------------------------  Getters  ----------------------------------------
-    public String getName() {
-        return name;
-    }
-    public int getPrice() {
-        return price;
-    }
-    public int getLevel() {
-        return level;
-    }
     public double getDamage() {
         return damage;
     }
@@ -27,18 +15,6 @@ public class Weapons {
         return hands;
     }
     // ----------------------------------------  Setters  ----------------------------------------
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
     public void setDamage(double damage) {
         this.damage = damage;
     }
@@ -48,9 +24,7 @@ public class Weapons {
     }
     // ----------------------------------------  Constructors  ----------------------------------------
     public Weapons(String name, int price, int level, double damage, int hands) {
-        this.name = name;
-        this.price = price;
-        this.level = level;
+        super(name, price, level);
         this.damage = damage;
         this.hands = hands;
     }
@@ -64,6 +38,4 @@ public class Weapons {
         String tempHands = colorText(String.format("Dexterity: %d", hands), "yellow");
         System.out.println(tempName + "  |  " + tempLevel + "  |  " + tempPrice + "  |  " + tempDamage + "  |  " + tempHands +  "  |  ");
     }
-
-
 }

@@ -12,5 +12,4 @@ public class IceSpells extends Spells{
     public void setExtraDamage(double extraDamage) {
         this.extraDamage = extraDamage;
     }
-
 }

@@ -2,53 +2,24 @@ package main.Items;
 
 import static main.Colors.colors.colorText;
 
-public class Armors {
+public class Armors extends Items{
     //  piece of armor has a name, a price, a level, and a damage reduction value.
     // ----------------------------------------  Variables  ----------------------------------------
-    private String name;
-    private int price;
-    private int level;
     private double damageReduction;
 
     // ----------------------------------------  Getters  ----------------------------------------
-    public String getName() {
-        return name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
     public double getDamageReduction() {
         return damageReduction;
     }
 
     // ----------------------------------------  Setters  ----------------------------------------
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
     public void setDamageReduction(double damageReduction) {
         this.damageReduction = damageReduction;
     }
 
     // ----------------------------------------  Constructors  ----------------------------------------
     public Armors(String name, int price, int level, double damageReduction) {
-        this.name = name;
-        this.price = price;
-        this.level = level;
+        super(name , price, level);
         this.damageReduction = damageReduction;
     }
 

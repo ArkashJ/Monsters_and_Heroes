@@ -2,52 +2,22 @@ package main.Items;
 
 import static main.Colors.colors.colorText;
 
-public class Potions {
+public class Potions extends Items{
     // Potions are single-use items: once they are used, potions cannot be reused. Potions have a name, a price, a level, and an effect amount
     // -------------------------------------------  Variables  ---------------------------------------------------------------
-    private String name;
-    private int price;
-    private int level;
     private int effectAmount;
     // -------------------------------------------  Getters  ---------------------------------------------------------------
-    public String getName() {
-        return name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
     public int getEffectAmount() {
         return effectAmount;
     }
-
     // -------------------------------------------  Setters  ---------------------------------------------------------------
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
     public void setEffectAmount(int effectAmount) {
         this.effectAmount = effectAmount;
     }
 
     // -------------------------------------------  Constructors  ---------------------------------------------------------------
     public Potions(String name, int price, int level, int effectAmount){
-        this.name = name;
-        this.price = price;
-        this.level = level;
+        super(name, price, level);
         this.effectAmount = effectAmount;
     }
 
