@@ -2,7 +2,7 @@ package main.Items;
 
 import static main.Colors.colors.colorText;
 
-public abstract class Spells {
+public class Spells {
     // A spell has a name, a price, a level, a damage value, a mana cost, and a spell type.
     // A hero will require at least the mana cost amount of MP to cast the spell.
     // Therefore, if a hero has no MP, that hero cannot cast any spells
