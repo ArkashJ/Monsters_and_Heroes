@@ -27,6 +27,7 @@ public class fileReader {
     }
 
     public static List<String[]> getSorcerersList() {
+        System.out
         return readFile("src/Instructions/Sorcerers.txt");
     }
 
@@ -72,22 +73,23 @@ public class fileReader {
     // ---------------------------------------------------------------------------------------------------------------
 
     // Function that loads and stores the heroes
-    public static void storeHeroes(){
+    public static void storeHeroes(ArrayList<Heroes> paladins, ArrayList<Heroes> sorcerers, ArrayList<Heroes> warriors) {
         // Format of txt: Name/mana/strength/agility/dexterity/starting money/starting experience
         // Format of constructor:
         // Heroes(String name, double MP, double strength, double agility, double dexterity,
         //                  int gold, int level, double HP, Positions position)
         // Format of array: [0] = name, [1] = mana, [2] = strength, [3] = agility, [4] = dexterity, [5] = gold, [6] = level,
         // For 7, 8 we have HP and position. Position will be 0, 0 by default and HP will be 100*level
-        ArrayList<Heroes> paladins = loadHeroes(getPaladinsList());
-        ArrayList<Heroes> sorcerers = loadHeroes(getSorcerersList());
-        ArrayList<Heroes> warriors = loadHeroes(getWarriorsList());
+        paladins = loadHeroes(getPaladinsList());
+        sorcerers = loadHeroes(getSorcerersList());
+        warriors = loadHeroes(getWarriorsList());
     }
 
     public static ArrayList<Heroes> loadHeroes(List<String[]> list) {
         ArrayList<Heroes> HeroList = new ArrayList<>();
+        // loop from index to 1 to skip the first line of the txt file
         for (String[] arr : list){
-            Heroes hero = new Heroes(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]), Double.parseDouble(arr[3]),
+            Heroes hero = new Heroes(arr[0], Double.parseDouble(arr[1]), Double.parseDouble(arr[2]), Double.parseDouble(arr[3]),
                     Double.parseDouble(arr[4]), Integer.parseInt(arr[5]), Integer.parseInt(arr[6]),
                     Double.parseDouble(arr[6])*100, new Positions(0, 0));
             System.out.println(hero);
@@ -97,15 +99,15 @@ public class fileReader {
     }
     // ---------------------------------------------------------------------------------------------------------------
     // Function that loads and stores the monsters
-    public static void storeMonsters(){
+    public static void storeMonsters(ArrayList<Monsters> dragons, ArrayList<Monsters> spirits, ArrayList<Monsters> exoskeletons){
         // Format of txt: Name/level/damage/defense/dodge chance
         // Format of constructor:
         // Monsters(String name, int level, double baseDamage, double defenceValue, double dodgeAgility, double HP)
         // Format of array: [0] = name, [1] = level, [2] = damage, [3] = defense, [4] = dodge chance
         // 5 = HP. HP will be 100*level
-        ArrayList<Monsters> dragons = loadMonsters(getDragonsList());
-        ArrayList<Monsters> spirits = loadMonsters(getSpiritsList());
-        ArrayList<Monsters> exoskeletons = loadMonsters(getExoskeletonsList());
+        dragons = loadMonsters(getDragonsList());
+        spirits = loadMonsters(getSpiritsList());
+        exoskeletons = loadMonsters(getExoskeletonsList());
     }
 
     public static ArrayList<Monsters> loadMonsters(List<String[]> list) {
@@ -120,16 +122,16 @@ public class fileReader {
     }
     // ---------------------------------------------------------------------------------------------------------------
     // Function that loads and stores the spells
-    public static void storeSpells() {
+    public static void storeSpells(ArrayList<Spells> fireSpells, ArrayList<Spells> iceSpells, ArrayList<Spells> lightningSpells) {
         // Format of txt: Name/cost/required level/damage/mana cost
         // Format of constructor:
         // FireSpells(String name, int price, int level, double damage, int manaCost, String spellType, double extraDefenseReduction)
         // Format of array: [0] = name, [1] = cost, [2] = required level, [3] = damage, [4] = mana cost
         // 5 = spell type, 6 = extra defense reduction
 
-        ArrayList<Spells> fireSpells = loadSpells(getFireSpellsList(), "FireSpell");
-        ArrayList<Spells> iceSpells = loadSpells(getIceSpellsList(), "IceSpell");
-        ArrayList<Spells> lightningSpells = loadSpells(getLightningSpellsList(), "LightningSpell");
+        fireSpells = loadSpells(getFireSpellsList(), "FireSpell");
+        iceSpells = loadSpells(getIceSpellsList(), "IceSpell");
+        lightningSpells = loadSpells(getLightningSpellsList(), "LightningSpell");
     }
 
     public static ArrayList<Spells> loadSpells(List<String[]> list, String spellType) {
@@ -144,13 +146,13 @@ public class fileReader {
     }
     // ---------------------------------------------------------------------------------------------------------------
     // Function that loads and stores the Armor, Weapons and Potions
-    public static void storeArmors(){
+    public static void storeArmors(ArrayList<Armors> armors){
         // Format of txt: Name/cost/required level/damage reduction
         // Format of constructor:
         // Armors(String name, int price, int level, double damageReduction)
         // Format of array: [0] = name, [1] = cost, [2] = required level, [3] = damage reduction
         List<String[]> armorsList = getArmorsList();
-        ArrayList<Armors> armors = new ArrayList<>();
+        armors = new ArrayList<>();
 
         for (String [] arr : armorsList){
             Armors armor = new Armors(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]), Double.parseDouble(arr[3]));
@@ -159,13 +161,13 @@ public class fileReader {
         }
     }
     // ---------------------------------------------------------------------------------------------------------------
-    public static void storePotions(){
+    public static void storePotions(ArrayList<Potions> potions){
         // Format of txt: Name/cost/required level/attribute increase/attribute affected
         // Format of constructor:
         // Potions(String name, int price, int level, int effectAmount)
         // Format of array: [0] = name, [1] = cost, [2] = required level, [3] = effect amount
         List<String[]> potionsList = getPotionsList();
-        ArrayList<Potions> potions = new ArrayList<>();
+        potions = new ArrayList<>();
 
         for (String [] arr : potionsList){
             Potions potion = new Potions(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]), Integer.parseInt(arr[3]));
@@ -174,13 +176,13 @@ public class fileReader {
         }
     }
     // ---------------------------------------------------------------------------------------------------------------
-    public static void storeWeapons(){
+    public static void storeWeapons(ArrayList<Weapons> weapons){
         // Format of txt: Name/cost/required level/attribute increase/attribute affected
         // Format of constructor:
         // Weapons(String name, int price, int level, double damage, int hands)
         // Format of array: [0] = name, [1] = cost, [2] = required level, [3] = effect amount
         List<String[]> weaponsList = getWeaponsList();
-        ArrayList<Weapons> weapons = new ArrayList<>();
+        weapons = new ArrayList<>();
 
         for (String [] arr : weaponsList){
             Weapons weapon = new Weapons(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]), Double.parseDouble(arr[3]), Integer.parseInt(arr[4]));
@@ -189,4 +191,26 @@ public class fileReader {
         }
     }
     // ---------------------------------------------------------------------------------------------------------------
+
+    public static void main(String[] args) {
+        // Store all the heroes, monsters, spells, armors, potions and weapons
+        ArrayList<Heroes> paladins = new ArrayList<>();
+        ArrayList<Heroes> sorcerers = new ArrayList<>();
+        ArrayList<Heroes> warriors = new ArrayList<>();
+        storeHeroes(paladins, sorcerers, warriors);
+        ArrayList<Monsters> dragons = new ArrayList<>();
+        ArrayList<Monsters> spirits = new ArrayList<>();
+        ArrayList<Monsters> exoskeletons = new ArrayList<>();
+        storeMonsters(dragons, spirits, exoskeletons);
+        ArrayList<Weapons> weapons = new ArrayList<>();
+        storeWeapons(weapons);
+        ArrayList<Armors> armors = new ArrayList<>();
+        storeArmors(armors);
+        ArrayList<Potions> potions = new ArrayList<>();
+        storePotions(potions);
+        ArrayList<Spells> fireSpells = new ArrayList<>();
+        ArrayList<Spells> iceSpells = new ArrayList<>();
+        ArrayList<Spells> lightningSpells = new ArrayList<>();
+        storeSpells(fireSpells, iceSpells, lightningSpells);
+    }
 }
