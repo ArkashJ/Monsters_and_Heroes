@@ -21,7 +21,7 @@ public class Inventory {
         inventory.put(item.getName(), item);
         size++;
     }
-
+    // -------------------------------------------------------------------------------------------
     // Method to remove an item from the inventory
     public Items removeItem(String itemName) {
         Items item = inventory.remove(itemName);
@@ -30,26 +30,27 @@ public class Inventory {
         }
         return item;
     }
-
+    // -------------------------------------------------------------------------------------------
     // Method to get an item from the inventory
     public Items getItem(String itemName) {
         return inventory.get(itemName);
     }
-
+    // -------------------------------------------------------------------------------------------
     // Method to get the current inventory size
     public int getSize() {
         return size;
     }
-
+    // -------------------------------------------------------------------------------------------
     // Method to check if the inventory is empty
     public boolean isEmpty() {
         return size == 0;
     }
-
+    // -------------------------------------------------------------------------------------------
     // printing out the inventory
     public void printInventory() {
         for (String key : inventory.keySet()) {
             System.out.println(key);
         }
     }
+    // -------------------------------------------------------------------------------------------
 }

@@ -27,4 +27,16 @@ public class Positions {
         return y_pos;
     }
 
+    public void setPos(int x_pos, int y_pos){
+        this.x_pos = x_pos;
+        this.y_pos = y_pos;
+    }
+
+    public int getPreviousX_pos(){
+        return x_pos - 1;
+    }
+
+    public int getPreviousY_pos(){
+        return y_pos - 1;
+    }
 }
