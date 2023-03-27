@@ -1,84 +1,71 @@
 package main.Market;
-
-import main.Items.Armors;
 import main.Items.Items;
-import main.Items.Potions;
-import main.Items.Spells.Spells;
-import main.Items.Weapons;
-
-import java.lang.reflect.Array;
+import main.Characters.Heroes.Heroes;
 import java.util.ArrayList;
 import main.fileReader;
+import static main.Colors.colors.colorText;
 import static main.fileReader.*;
 
+// The market initializes a list of items: 3 Armors of each type, 3 weapons of each type and 5 spells and 5 potions per type
+// It has a list of items that are for sale and sold out
+// When you want to buy an item, the item is removed from the list of items for sale and added to the list of sold out items
+// When you want to sell an item, the item is removed from the list of sold out items and added to the list of items for sale
+
 public class Market {
-    // The market initializes a list of items: 3 Armors of each type, 3 weapons of each type and 5 spells and 5 potions per type
-    // The market has a list of items that are available for sale
-    // The market has a list of items that are sold out
+
 
     private ArrayList<Items> itemsForSale = new ArrayList<>();
     private ArrayList<Items> soldOutItems = new ArrayList<>();
-
+    // --------------------------------------------------------------------------------------------------
     public Market(){
-        // Initialize arraylist of spells and add them to the items for sale list
-//        fileReader fileReader = new fileReader();
-//        fileReader.
-
-        ArrayList<Spells> fireSpells = new ArrayList<>();
-        ArrayList<Spells> iceSpells = new ArrayList<>();
-        ArrayList<Spells> lightningSpells = new ArrayList<>();
-        storeSpells(fireSpells, iceSpells, lightningSpells);
-        itemsForSale.addAll(fireSpells);
-        itemsForSale.addAll(iceSpells);
-        itemsForSale.addAll(lightningSpells);
-
-        // Initialize arraylist of potions and add them to the items for sale list
-        ArrayList<Potions> potions = new ArrayList<>();
-        storePotions(potions);
-        itemsForSale.addAll(potions);
-
-        // Initialize arraylist of weapons and add them to the items for sale list
-        ArrayList<Weapons> weapons = new ArrayList<>();
-        storeWeapons(weapons);
-        itemsForSale.addAll(weapons);
-
-        // Initialize arraylist of armors and add them to the items for sale list
-        ArrayList<Armors> armors = new ArrayList<>();
-        storeArmors(armors);
-        itemsForSale.addAll(armors);
     }
-
+    // --------------------------------------------------------------------------------------------------
     public ArrayList<Items> getItemsForSale() {
         return itemsForSale;
     }
-
-    public static void main(String[] args){
-        Market market = new Market();
-        System.out.println(market.getItemsForSale());
-    }
-
-
-    public void buyItem(){
+    // --------------------------------------------------------------------------------------------------
+    public void buyItem(Heroes hero, Items item){
         // buyItems from the market and store them in the inventory
-    }
-    public void sellItem(){
-        // sellItems from the inventory and store them in the market
-    }
+        int gold = hero.getGold();
+        int level = hero.getLevel();
+        int price = item.getPrice();
 
+        // To implement: Add item to the hero's inventory
+        if (gold >= price && level >= item.getLevel()){
+            itemsForSale.remove(item);
+            soldOutItems.add(item);
+            hero.setGold(gold - price);
+            System.out.println("You bought " + item.getName() + " for " + price + " gold");
+        } else if (gold < price){
+            System.out.println(colorText("You don't have enough gold to buy this item", "red"));
+        } else if (level < item.getLevel()){
+            System.out.println(colorText("You don't have enough level to buy this item", "red"));
+        }
+    }
+    // --------------------------------------------------------------------------------------------------
+    public void sellItem(Heroes hero, Items item){
+        // sellItems from the inventory and store them in the market
+        // To implement: Remove item from the hero's inventory
+        int price = item.getPrice();
+        hero.setGold(hero.getGold() + price/2);
+        itemsForSale.add(item);
+        System.out.println(colorText("$$$Cha-Ching:You sold " + item.getName() + " for " + price/2 + " gold", "yellow"));
+    }
+    // --------------------------------------------------------------------------------------------------
     public void showItems(){
         // show the items that are available for sale
+        System.out.println("These are the items for sale");
+        for (Items item : itemsForSale){
+            System.out.println(colorText( " | " + item.getName(), "blue" )+ colorText( " | " + item.getPrice() + " gold", "yellow") + colorText( " | " + item.getLevel() + " level", "green"));
+        }
     }
-
+    // --------------------------------------------------------------------------------------------------
     public void showSoldOutItems(){
         // show the items that are sold out
+        System.out.println("These are the items that are sold out");
+        for (Items item : soldOutItems){
+            System.out.println(colorText( " | " + item.getName() + " | " + item.getPrice() + " gold | " + item.getLevel() + " level", "gray"));
+        }
     }
-
-    public void showInventory(){
-        // show the items that are in the inventory
-    }
-
-    public void showMarket(){
-        // show the items that are in the market
-
-    }
+    // --------------------------------------------------------------------------------------------------
 }

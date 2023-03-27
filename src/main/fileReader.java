@@ -27,7 +27,6 @@ public class fileReader {
     }
 
     public static List<String[]> getSorcerersList() {
-        System.out
         return readFile("src/Instructions/Sorcerers.txt");
     }
 
