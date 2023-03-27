@@ -45,4 +45,11 @@ public class Inventory {
     public boolean isEmpty() {
         return size == 0;
     }
+
+    // printing out the inventory
+    public void printInventory() {
+        for (String key : inventory.keySet()) {
+            System.out.println(key);
+        }
+    }
 }

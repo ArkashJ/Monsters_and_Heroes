@@ -1,6 +1,7 @@
 package main.Characters.Heroes;
 
 import main.Characters.Characters;
+import main.Inventory.Inventory;
 import main.Positions.Positions;
 
 import static main.Colors.colors.colorText;
@@ -28,6 +29,7 @@ import static main.Colors.colors.colorText;
  * • getGold() - returns the hero’s gold
  * • getLevel() - returns the hero’s level
  * • getPosition() - returns the hero’s position
+ * • getInventory() - returns the hero’s inventory
 
  * Setters:
  * • setStrength() - sets the hero’s strength value
@@ -47,11 +49,12 @@ public class Heroes extends Characters implements IHeroes {
     private double agility;
     private double dexterity;
     private int gold;
+    private Inventory inventory;
     private Positions position;
 
     //-------------------------------------------------------------------------------------------------------------------
     public Heroes(String name, double MP, double strength, double agility, double dexterity,
-                  int gold, int level, double HP, Positions position){
+                  int gold, int level, double HP, Positions position, Inventory inventory){
         super(name, level, HP);
         this.MP = MP;
         this.strength = strength;
@@ -59,6 +62,7 @@ public class Heroes extends Characters implements IHeroes {
         this.dexterity = dexterity;
         this.gold = gold;
         this.position = position;
+        this.inventory = inventory;
     }
     //-------------------------------------------------------------------------------------------------------------------
     //getters to get player statistics
@@ -90,6 +94,8 @@ public class Heroes extends Characters implements IHeroes {
     public double getHP() {
         return super.getHP();
     }
+
+    public Inventory getInventory() { return inventory; }
     //-------------------------------------------------------------------------------------------------------------------
     // Setters to get player statistics
     public void setStrength(double strength) {
@@ -126,7 +132,8 @@ public class Heroes extends Characters implements IHeroes {
 
         System.out.println(tempName + "  |  " + tempLevel + "  |  " + tempHP + "  |  " + tempMP + "  |  " + tempDexterity +
                 "  |  " + tempAgility + "  |  " + tempStrength + "  |  " + tempGold + "  |  ");
-        // System.out.printf("The inventory currently is: %s", inventory);
+         System.out.printf("The inventory currently is: ");
+         inventory.printInventory();
     }
     //------------------------------------------------------------------------------------------------------------------------
 }
