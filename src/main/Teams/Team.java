@@ -15,7 +15,7 @@ public class Team {
 
     private int x_position;
     private int y_position;
-    private List<Characters> characters;
+    protected List<Characters> characters;
     //---------------------------------------------------------------------------------------------------------
     public Team(String name, int teamSize, int x_position, int y_position){
         this.name = name;
@@ -72,4 +72,5 @@ public class Team {
         return setNumHeroes(teamSize);
     }
     //---------------------------------------------------------------------------------------------------------
+
 }

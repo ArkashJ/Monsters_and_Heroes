@@ -21,9 +21,10 @@ public class World {
     private TeamHeroes teamHeroes;
     private int size;
 
-    public World(int size){
+    public World(int size, TeamHeroes teamHeroes){
         this.size = size;
         world = new Cell[size][size];
+        this.teamHeroes = teamHeroes;
         generateRandomBoard();
     }
 
@@ -80,7 +81,15 @@ public class World {
         }
     }
 
-    public void enterCell(int x, int y){
-        world[x][y].enterCell();
+    public void enterCell(int x, int y) {
+        Heroes firstHero = teamHeroes.getHeroes().get(0); // Get the first hero from the team
+        world[x][y].enterCell(firstHero); // Call the enterCell method of the Cell class with the first hero
     }
+
+    public void moveHeroes(int x, int y){
+        Heroes firstHero = teamHeroes.getHeroes().get(0); // Get the first hero from the team
+        firstHero.getPosition().setPos(x, y); // Set the position of the first hero to the new position
+        enterCell(x, y); // Call the enterCell method of the World class with the new position
+    }
+
 }
