@@ -1,7 +1,15 @@
 package main.Market;
+import main.Items.Armors;
 import main.Items.Items;
 import main.Characters.Heroes.Heroes;
+import main.Items.Potions;
+import main.Items.Spells.Spells;
+import main.Items.Weapons;
+import main.LoadData.LoadData;
+
 import java.util.ArrayList;
+import java.util.List;
+
 import static main.Colors.colors.colorText;
 
 // The market initializes a list of items: 3 Armors of each type, 3 weapons of each type and 5 spells and 5 potions per type
@@ -10,12 +18,25 @@ import static main.Colors.colors.colorText;
 // When you want to sell an item, the item is removed from the list of sold out items and added to the list of items for sale
 
 public class Market {
-
-
     private ArrayList<Items> itemsForSale = new ArrayList<>();
     private ArrayList<Items> soldOutItems = new ArrayList<>();
+    LoadData loadData = new LoadData();
     // --------------------------------------------------------------------------------------------------
     public Market(){
+// initialize the items for sale
+        List<Armors> armors = loadData.getArmors();
+        List<Potions> Potions = loadData.getPotions();
+        List<Weapons> weapons = loadData.getWeapons();
+        List<Spells> fireSpells = loadData.getFireSpells();
+        List<Spells> iceSpells = loadData.getIceSpells();
+        List<Spells> lightningSpells = loadData.getLightningSpells();
+
+        itemsForSale.addAll(armors);
+        itemsForSale.addAll(Potions);
+        itemsForSale.addAll(weapons);
+        itemsForSale.addAll(fireSpells);
+        itemsForSale.addAll(iceSpells);
+        itemsForSale.addAll(lightningSpells);
     }
     // --------------------------------------------------------------------------------------------------
     public ArrayList<Items> getItemsForSale() {

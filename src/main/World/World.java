@@ -47,7 +47,7 @@ public class World {
         this.size = size;
     }
 
-    private void generateRandomBoard(){
+    public void generateRandomBoard(){
         int numCells = size * size;
         int numInaccessible = (int) (numCells * 0.2);
         int numMarket = (int) (numCells * 0.3);

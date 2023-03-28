@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 import static main.Colors.colors.colorText;
 // Class to initialize a story line with time delays to increase the impact of the story
 public class StoryLine {
-    public void startStory(){
+    public static void startStory(){
         System.out.println( colorText("In a mystical world, sorcers, paladins and warrior clans kept fighting amongst themselves for dominance.", "red"));
         delay(3);
         System.out.println(colorText("The world was in imbalance until one day ......" +
