@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99312434-18f3-4b0c-b185-5f8d70288819" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/LoadData/LoadData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LoadData/ArmorFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/LoadData/ArmorFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LoadData/HeroFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/LoadData/HeroFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LoadData/MonsterFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/LoadData/MonsterFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LoadData/PotionFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/LoadData/PotionFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LoadData/SpellFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/LoadData/SpellFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LoadData/WeaponFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/LoadData/WeaponFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Battle/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Battle/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/World/Cell/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/World/Cell/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/World/IWorld.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/World/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/World/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +94,7 @@
       <workItem from="1679875789430" duration="10376000" />
       <workItem from="1679929845755" duration="3160000" />
       <workItem from="1679964108846" duration="4476000" />
-      <workItem from="1679968986181" duration="1904000" />
+      <workItem from="1679968986181" duration="2777000" />
     </task>
     <servers />
   </component>

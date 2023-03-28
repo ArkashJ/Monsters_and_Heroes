@@ -143,8 +143,6 @@ public class World {
     public static void main(String[] args){
         World world = new World(8);
         world.printWorld();
-//        world.enterCell(0, 0);
-//        world.moveHeroes(1, 1);
     }
 
 }

@@ -23,13 +23,17 @@ public class Cell {
     private Cell cell;
     private Market market;
     private String type;
-
+    private boolean battle = false;
     public Cell(String type){
         this.type = type;
     }
 
     public String getType() {
         return type;
+    }
+
+    public boolean getBattle() {
+        return battle;
     }
 
     public void setType(String type) {
@@ -42,6 +46,10 @@ public class Cell {
 
     public void setCell(Cell cell) {
         this.cell = cell;
+    }
+
+    public void setBattle(boolean battle) {
+        this.battle = battle;
     }
 
     public void enterCell(Heroes hero){
@@ -65,9 +73,11 @@ public class Cell {
 
             if (dieRoll <= battleThreshold) {
                 System.out.println("A battle begins!");
+                setBattle(true);
                 // Start the battle here
             } else {
                 System.out.println("No battle this time.");
+                setBattle(false);
             }
         }
     }
