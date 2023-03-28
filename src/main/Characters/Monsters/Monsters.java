@@ -28,8 +28,8 @@ import static main.Colors.colors.colorText;
  */
 
 public class Monsters extends Characters implements IMonsters {
-    private double HP;
-    private int level;
+//    private double HP;
+//    private int level;
     private double baseDamage;
     private double defenceValue;
     private double dodgeAgility;
@@ -41,10 +41,10 @@ public class Monsters extends Characters implements IMonsters {
         this.dodgeAgility = dodgeAgility;
     }
     //---------------------------------------------------------------------------------------------------------------------------------------
-    @Override
-    public double getHP() {
-        return super.getHP();
-    }
+//    @Override
+//    public double getHP() {
+//        return super.getHP();
+//    }
     //---------------------------------------------------------------------------------------------------------------------------------------
 
     public double getBaseDamage(){

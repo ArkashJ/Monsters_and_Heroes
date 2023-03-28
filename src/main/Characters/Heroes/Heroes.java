@@ -40,10 +40,7 @@ import static main.Colors.colors.colorText;
  * printStats() - prints the heroes stats
  */
 public class Heroes extends Characters implements IHeroes {
-    private String name;
-    private int level;
     private int experience;
-    private double HP;
     private double MP;
     private double strength;
     private double agility;
@@ -90,10 +87,10 @@ public class Heroes extends Characters implements IHeroes {
         return level;
     }
 
-    @Override
-    public double getHP() {
-        return super.getHP();
-    }
+//    @Override
+//    public double getHP() {
+//        return super.getHP();
+//    }
 
     public Inventory getInventory() { return inventory; }
     //-------------------------------------------------------------------------------------------------------------------
@@ -125,7 +122,7 @@ public class Heroes extends Characters implements IHeroes {
         String tempLevel = colorText(String.format("Level: %d", level), "red");
         String tempHP = colorText(String.format("HP: %,.3f", HP), "green");
         String tempMP = colorText(String.format("MP: %,.3f", MP), "blue");
-        String tempDexterity = colorText(String.format("Dexterity: %,.3f", dexterity), "black");
+        String tempDexterity = colorText(String.format("Dexterity: %,.3f", dexterity), "gray");
         String tempAgility = colorText(String.format("Agility: %,.3f", agility), "purple");
         String tempStrength = colorText(String.format("Strength: %,.3f", strength), "cyan");
         String tempGold = colorText(String.format("Gold: %d", gold), "yellow");

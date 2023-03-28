@@ -2,9 +2,7 @@ package main.Market;
 import main.Items.Items;
 import main.Characters.Heroes.Heroes;
 import java.util.ArrayList;
-import main.fileReader;
 import static main.Colors.colors.colorText;
-import static main.fileReader.*;
 
 // The market initializes a list of items: 3 Armors of each type, 3 weapons of each type and 5 spells and 5 potions per type
 // It has a list of items that are for sale and sold out
