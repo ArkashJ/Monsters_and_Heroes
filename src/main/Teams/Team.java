@@ -17,6 +17,11 @@ public class Team {
     private int y_position;
     protected List<Characters> characters;
     //---------------------------------------------------------------------------------------------------------
+    public Team(String name, int teamSize) {
+        this.name = name;
+        this.teamSize = teamSize;
+        characters = new ArrayList<>();
+    }
     public Team(String name, int teamSize, int x_position, int y_position){
         this.name = name;
         this.teamSize = teamSize;

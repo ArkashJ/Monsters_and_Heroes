@@ -8,7 +8,9 @@ public class TeamHeroes extends Team {
     public TeamHeroes(String name, int teamSize, int x_position, int y_position) {
         super(name, teamSize, x_position, y_position);
     }
-
+    public TeamHeroes(String name, int teamSize) {
+        super(name, teamSize);
+    }
     public void addHero(Heroes hero) {
         addCharacter(hero);
     }

@@ -2,6 +2,7 @@ package main;
 import main.Characters.Heroes.Heroes;
 import main.Characters.Monsters.IMonsters;
 import main.Characters.Monsters.Monsters;
+import main.Inventory.Inventory;
 import main.Items.Armors;
 import main.Items.Potions;
 import main.Items.Spells.Spells;
@@ -16,10 +17,30 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static main.LoadFile.readFile;
+//import static main.LoadFile.readFile;
 
 // Class that reads the txt files in the instructions folder, iterates over them and returns a list of arrays
 public class fileReader {
+    public static List<String[]> readFile(String fileName) {
+        List<String[]> content = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            boolean firstLine = true;
+
+            while ((line = br.readLine()) != null) {
+                if (firstLine) {
+                    firstLine = false;
+                    continue;
+                }
+                content.add(line.split("/"));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return content;
+    }
     // Functions to call the readFile function and make Lists of arrays for heroes, monsters, spells, and items
     // ---------------------------------------------------------------------------------------------------------------
     public static List<String[]> getPaladinsList() {
@@ -90,7 +111,7 @@ public class fileReader {
         for (String[] arr : list){
             Heroes hero = new Heroes(arr[0], Double.parseDouble(arr[1]), Double.parseDouble(arr[2]), Double.parseDouble(arr[3]),
                     Double.parseDouble(arr[4]), Integer.parseInt(arr[5]), Integer.parseInt(arr[6]),
-                    Double.parseDouble(arr[6])*100, new Positions(0, 0));
+                    Double.parseDouble(arr[6])*100, new Positions(0, 0), new Inventory());
             System.out.println(hero);
             HeroList.add(hero);
         }

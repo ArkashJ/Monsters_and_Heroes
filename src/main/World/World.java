@@ -92,4 +92,11 @@ public class World {
         enterCell(x, y); // Call the enterCell method of the World class with the new position
     }
 
+
+    public static void main(String[] args){
+        TeamHeroes teamHeroes = new TeamHeroes("Team1", 3, 0, 0);
+        World world = new World(3, teamHeroes);
+        world.printWorld();
+    }
+
 }
