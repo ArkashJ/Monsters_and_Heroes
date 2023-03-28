@@ -114,6 +114,7 @@ public class Heroes extends Characters implements IHeroes {
     public void setGold(int gold) { this.gold = gold;}
 
     public void setExperience(int experience) { this.experience = experience; }
+
     //------------------------------------------------------------------------------------------------------------------------
     //print player statistics before the game starts
     public void printStats(){

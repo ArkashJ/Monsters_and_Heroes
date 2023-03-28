@@ -43,6 +43,19 @@ public class controls {
         return new Positions(pos.getX_pos(), pos.getY_pos() - 1);
     }
 
+    public char getQuit(){
+        return quit;
+    }
+
+    public char getI(){
+        return i;
+    }
+
+    public char getEnterMarket(){
+        return enterMarket;
+    }
+
+
     // ------------------ Move function to move around the world ------------------
     public Positions move(Positions pos, char input){
         return switch (input) {

@@ -10,10 +10,13 @@ package main.Battle;
 import main.Characters.Heroes.Heroes;
 import main.Characters.Monsters.Monsters;
 import main.Market.Market;
+import main.Positions.Positions;
 import main.Teams.TeamHeroes;
 import main.Teams.TeamMonsters;
 import main.World.World;
 import main.StoryLine;
+import main.controls;
+
 import java.util.Scanner;
 import static main.StoryLine.startStory;
 
@@ -25,7 +28,6 @@ public class Battle {
     private Scanner scanner;
     public Battle() {
         scanner = new Scanner(System.in);
-        market = new Market();
         createNewGame();
     }
 
@@ -37,9 +39,17 @@ public class Battle {
         int worldSize = scanner.nextInt();
         world = new World(worldSize);
         world.printWorld();
+
+        while (true) {
+            System.out.println("Do you want to change the world (y/n)?");
+            String answer = scanner.next();
+            if (answer.equals("n")) {
+                break;
+            }
+            resetWorld();
+        }
         market = new Market(); // Initialize the market
         // Load the items for the market here
-
         selectHeroes();
     }
 
@@ -54,8 +64,40 @@ public class Battle {
     }
 
     public void mainGameLoop() {
+        controls control = new controls();
+        Scanner scanner = new Scanner(System.in);
+        char input;
         while (true) {
             // Implement main game loop logic here
+            System.out.println("Enter your command (WASD for movement, Q to quit, I for info, M to enter market): ");
+            input = scanner.next().charAt(0);
+
+            if (input == control.getQuit()) {
+                System.out.println("Quitting the game...");
+                break;
+            }
+
+            // Move the hero based on user input
+            Positions currentPosition = teamHeroes.getHeroes().get(0).getPosition();
+            Positions newPosition = control.move(currentPosition, input);
+
+            // Check if the new position is within the bounds of the world
+            if (newPosition.getX_pos() >= 0 && newPosition.getX_pos() < world.getSize() &&
+                    newPosition.getY_pos() >= 0 && newPosition.getY_pos() < world.getSize()) {
+
+                teamHeroes.getHeroes().get(0).getPosition().setPos(newPosition.getX_pos(), newPosition.getY_pos());
+//                enterCell(newPosition.getX_pos(), newPosition.getY_pos());
+            } else {
+                System.out.println("You cannot move outside the world!");
+            }
+
+            if (input == control.getI()) {
+                // Implement the display information method
+                System.out.println("Display information about the heroes: ");
+                for (Heroes hero : teamHeroes.getHeroes()) {
+                    hero.printStats();
+                }
+            }
         }
     }
 

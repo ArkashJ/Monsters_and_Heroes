@@ -54,6 +54,7 @@ public class Market {
             itemsForSale.remove(item);
             soldOutItems.add(item);
             hero.setGold(gold - price);
+            hero.getInventory().addItem(item);
             System.out.println("You bought " + item.getName() + " for " + price + " gold");
         } else if (gold < price){
             System.out.println(colorText("You don't have enough gold to buy this item", "red"));
@@ -67,8 +68,11 @@ public class Market {
         // To implement: Remove item from the hero's inventory
         int price = item.getPrice();
         hero.setGold(hero.getGold() + price/2);
+        hero.getInventory().removeItem(item.getName());
         itemsForSale.add(item);
         System.out.println(colorText("$$$Cha-Ching:You sold " + item.getName() + " for " + price/2 + " gold", "yellow"));
+        System.out.println("Your inventory is: " );
+        hero.getInventory().printInventory();
     }
     // --------------------------------------------------------------------------------------------------
     public void showItems(){
