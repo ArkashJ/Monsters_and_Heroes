@@ -25,11 +25,13 @@ public class Battle {
     private Scanner scanner;
     public Battle() {
         scanner = new Scanner(System.in);
+        market = new Market();
         createNewGame();
     }
 
     public void createNewGame() {
         startStory();
+        System.out.println("----------------------------------------------------------------------------------------");
         System.out.println("Welcome to the Monsters and Heroes game!");
         System.out.println("Enter the size of the world (e.g., 8 for an 8x8 world):");
         int worldSize = scanner.nextInt();
@@ -60,5 +62,9 @@ public class Battle {
     public static void main(String[] args) {
         Battle battle = new Battle();
         battle.mainGameLoop();
+    }
+
+    public void battle(TeamHeroes teamHeroes, TeamMonsters teamMonsters) {
+        // Implement battle logic here
     }
 }

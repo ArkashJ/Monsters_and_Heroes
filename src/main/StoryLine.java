@@ -15,6 +15,7 @@ public class StoryLine {
                 "All hope isn't lost yet because these heroes are the only ones strong enough to stop them."
         , "blue"));
         delay(3);
+        System.out.println("----------------------------------------------------------------------------------------");
         System.out.println(colorText("You have been chosen to protect this planet from this evil doers. You are to pick a team of 3, should you choose to accept," +
                 "to go on a quest to fight these monsters. The all knowing oracle will be floating around the world with you as the symbol i, standing for intelligence, " +
                 "Intransigence and intrepid.", "green"));
