@@ -1,6 +1,9 @@
 package main;
 
 import main.Positions.Positions;
+
+import static main.Colors.colors.colorText;
+
 public class controls {
     // W/w = up
     // S/s = down
@@ -68,5 +71,13 @@ public class controls {
     }
 
     // ------------------ Functions dealing with printing information and entering the market------------------
-
+    public void printControlInfo(){
+        System.out.println(colorText("W | w", "red") + " - Move up");
+        System.out.println(colorText("S | s", "blue") + " - Move down");
+        System.out.println(colorText("D | d", "green") + " - Move right");
+        System.out.println(colorText("A | a", "yellow") + " - Move left");
+        System.out.println(colorText("Q | q", "black") + " - Quit the game");
+        System.out.println(colorText("I | i", "gray") + " - Display information about the heroes");
+        System.out.println(colorText("M | m", "cyan") + " - Enter the market");
+    }
 }

@@ -31,12 +31,14 @@ public class Market {
         List<Spells> iceSpells = loadData.getIceSpells();
         List<Spells> lightningSpells = loadData.getLightningSpells();
 
-        itemsForSale.addAll(armors);
-        itemsForSale.addAll(Potions);
-        itemsForSale.addAll(weapons);
-        itemsForSale.addAll(fireSpells);
-        itemsForSale.addAll(iceSpells);
-        itemsForSale.addAll(lightningSpells);
+        for (int i = 0; i < 3; i++) {
+            itemsForSale.addAll(armors);
+            itemsForSale.addAll(Potions);
+            itemsForSale.addAll(weapons);
+            itemsForSale.addAll(fireSpells);
+            itemsForSale.addAll(iceSpells);
+            itemsForSale.addAll(lightningSpells);
+        }
     }
     // --------------------------------------------------------------------------------------------------
     public ArrayList<Items> getItemsForSale() {

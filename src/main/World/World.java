@@ -145,4 +145,11 @@ public class World {
         world.printWorld();
     }
 
+    public void printWorldInfo(){
+        System.out.println("World size: " + size);
+        System.out.println(colorText("Number of inaccessible cells: ~20%", "yellow")    );
+        System.out.println(colorText("Number of market cells: ~50%", "red") );
+        System.out.println(colorText("Number of common cells: ~30%", "gray"));
+    }
+
 }

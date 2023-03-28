@@ -26,6 +26,12 @@ public class StoryLine {
         delay(3);
     }
 
+    public static void endStory(){
+        System.out.println(colorText("You have defeated the monsters and saved the world. You are now a legend. You are now a hero. You are now a champion", "blue"));
+        delay(2);
+        System.out.println(colorText("Thank you for playing!", "gray"));
+    }
+
     public static void delay(int seconds){
         try {
             TimeUnit.SECONDS.sleep(seconds);

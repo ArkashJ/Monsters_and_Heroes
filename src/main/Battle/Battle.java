@@ -18,6 +18,8 @@ import main.StoryLine;
 import main.controls;
 
 import java.util.Scanner;
+
+import static main.StoryLine.endStory;
 import static main.StoryLine.startStory;
 
 public class Battle {
@@ -74,6 +76,7 @@ public class Battle {
 
             if (input == control.getQuit()) {
                 System.out.println("Quitting the game...");
+                endStory();
                 break;
             }
 
@@ -92,11 +95,19 @@ public class Battle {
             }
 
             if (input == control.getI()) {
-                // Implement the display information method
+                System.out.println("Display information about the world: ");
+                world.printWorldInfo();
+                System.out.println("Display information about the controls: ");
+                control.printControlInfo();
                 System.out.println("Display information about the heroes: ");
                 for (Heroes hero : teamHeroes.getHeroes()) {
                     hero.printStats();
                 }
+                System.out.println("Display information about the markets: ");
+                System.out.println("You can buy the following items: ");
+                market.showItems();
+                System.out.println("You can sell the following items: ");
+                market.showSoldOutItems();
             }
         }
     }
