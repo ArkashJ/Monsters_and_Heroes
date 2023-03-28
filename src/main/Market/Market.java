@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Scanner;
 
 import static main.Colors.colors.colorText;
-
+import main.Market.IMarket;
 // The market initializes a list of items: 3 Armors of each type, 3 weapons of each type and 5 spells and 5 potions per type
 // It has a list of items that are for sale and sold out
 // When you want to buy an item, the item is removed from the list of items for sale and added to the list of sold out items
 // When you want to sell an item, the item is removed from the list of sold out items and added to the list of items for sale
 
-public class Market {
+public class Market implements IMarket{
     private ArrayList<Items> itemsForSale = new ArrayList<>();
     private ArrayList<Items> soldOutItems = new ArrayList<>();
     LoadData loadData = new LoadData();

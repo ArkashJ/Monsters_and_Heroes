@@ -1,11 +1,11 @@
 package main.Positions;
-
+import main.Positions.IPositions;
 /*
  *This class takes in a player and returns their position in the board
  * x_pos = row
  * y_pos = column
  */
-public class Positions {
+public class Positions implements IPositions {
     private int x_pos;
     private int y_pos;
 
