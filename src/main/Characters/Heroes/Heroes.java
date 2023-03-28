@@ -111,6 +111,7 @@ public class Heroes extends Characters implements IHeroes {
     public void setExperience(int experience) { this.experience = experience; }
 
     public void setPosition(Positions position) { this.position = position; }
+    public void revive() { this.HP = 100; }
     //------------------------------------------------------------------------------------------------------------------------
     //print player statistics before the game starts
     public void printStats(){
