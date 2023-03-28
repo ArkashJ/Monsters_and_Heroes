@@ -1,8 +1,9 @@
 package main.Inventory;
 import java.util.HashMap;
 import main.Items.Items;
+import main.Inventory.IInventory;
 
-public class Inventory {
+public class Inventory implements IInventory{
     // The inventory will be a HashMap with no maximum length
     // with the key being the item name and the value being the item
     private HashMap<String, Items> inventory;

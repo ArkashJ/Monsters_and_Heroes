@@ -9,7 +9,7 @@ public class Positions {
     private int x_pos;
     private int y_pos;
 
-    public Positions(){
+    public Positions() {
         this.x_pos = 0;
         this.y_pos = 0;
     }

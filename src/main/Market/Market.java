@@ -97,7 +97,6 @@ public class Market {
         }
     }
     // --------------------------------------------------------------------------------------------------
-
     public boolean enterMarket(TeamHeroes teamHeroes){
         // enter the market and buy or sell items
         System.out.println(colorText("Welcome to the market", "black"));
@@ -118,8 +117,6 @@ public class Market {
         // ------------------------------------------------------------------------------------------------------
         // ------------------------------------------------------------------------------------------------------
         while (!input.equalsIgnoreCase("exit")) {
-            // ------------------------------------------------------------------------------------------------------
-            // ------------------------------------------------------------------------------------------------------
             System.out.println("Select Hero:");
             teamHeroes.printHeroes();
             String heroName = scanner.nextLine();
@@ -187,8 +184,8 @@ public class Market {
                 }
             }
         }
-
         System.out.println("Exiting the Market!!!");
         return false;
     }
+    // ------------------------------------------------------------------------------------------------------
 }

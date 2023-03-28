@@ -5,6 +5,7 @@ import main.Positions.Positions;
 import static main.Colors.colors.colorText;
 import java.util.Random;
 import main.Teams.TeamHeroes;
+import main.World.Cell.ICell;
 
 /*
 The world of the game is represented by a fixed, square grid of spaces. The grid contains three types of spaces:
@@ -19,7 +20,7 @@ The world of the game is represented by a fixed, square grid of spaces. The grid
 // If the cell is inaccessible, tell the hero they can't go here and set their positions to the previous position
 // If the cell is a market, the hero can enter it and the sold out/for sale items are shown
 // If the cell is a common space, a probability generator is used to determine if a battle will occur or not
-public class Cell {
+public class Cell implements ICell{
     private Cell cell;
     private Market market;
     private String type;

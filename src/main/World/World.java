@@ -2,7 +2,7 @@ package main.World;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-
+import main.World.IWorld;
 import main.Characters.Heroes.Heroes;
 import main.Teams.TeamHeroes;
 import main.World.Cell.Cell;
@@ -20,7 +20,7 @@ import main.Colors.colors;
 
 import static main.Colors.colors.colorText;
 
-public class World {
+public class World implements IWorld{
     private Cell[][] world;
     private TeamHeroes teamHeroes;
     private int size;
