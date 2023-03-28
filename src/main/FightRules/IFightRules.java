@@ -1,4 +1,4 @@
-package main.Game;
+package main.FightRules;
 import main.Characters.Heroes.Heroes;
 import main.Characters.Monsters.Monsters;
 

@@ -1,7 +1,11 @@
 package main.Inventory;
 import java.util.HashMap;
+
+import main.Items.Armors;
 import main.Items.Items;
 import main.Inventory.IInventory;
+import main.Items.Spells.Spells;
+import main.Items.Weapons;
 
 public class Inventory implements IInventory{
     // The inventory will be a HashMap with no maximum length
@@ -34,7 +38,28 @@ public class Inventory implements IInventory{
     // -------------------------------------------------------------------------------------------
     // Method to get an item from the inventory
     public Items getItem(String itemName) {
-        return inventory.get(itemName);
+        Items item = inventory.get(itemName);
+        if (item instanceof Spells) {
+            return (Spells) item;
+        }
+
+        if (item instanceof Weapons) {
+            return (Weapons) item;
+        }
+
+        if (item instanceof Armors) {
+            return (Armors) item;
+        }
+        // Add similar conditions for other subclasses if necessary
+        if (item != null) {
+            size--;
+        }
+
+        return item;
+    }
+
+    public int getPrice(String itemName) {
+        return inventory.get(itemName).getPrice();
     }
     // -------------------------------------------------------------------------------------------
     // Method to get the current inventory size

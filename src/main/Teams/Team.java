@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static main.Game.FightRules.setNumHeroes;
+import static main.FightRules.FightRules.setNumHeroes;
 
 public class Team {
     private String name;

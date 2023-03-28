@@ -17,15 +17,19 @@ import main.World.Cell.Cell;
 import main.World.World;
 import main.StoryLine;
 import main.controls;
-
-import java.util.Scanner;
-
 import static main.StoryLine.endStory;
 import static main.StoryLine.startStory;
+import java.util.List;
+import java.util.Scanner;
+import main.LoadData.LoadData;
 
 public class Battle {
-
+    private LoadData loadData = new LoadData();
+    private List<Heroes> Paladins = loadData.getPaladins();
+    private List<Heroes> Sorcerers = loadData.getSorcerers();
+    private List<Heroes> Warriors = loadData.getWarriors();
     private World world;
+
     private TeamHeroes teamHeroes;
     private Market market;
     private Scanner scanner;
@@ -69,6 +73,36 @@ public class Battle {
     public void selectHeroes() {
         System.out.println("Select your team of heroes (maximum 3 heroes):");
         // Implement hero selection logic here
+        System.out.println("Paladins: ");
+        Paladins = loadData.getPaladins();
+        System.out.println("----------------------------------------");
+        System.out.println("Sorcerers: ");
+        Sorcerers = loadData.getSorcerers();
+        System.out.println("----------------------------------------");
+        System.out.println("Warriors: ");
+        Warriors = loadData.getWarriors();
+        System.out.println("----------------------------------------");
+
+
+        boolean isTeamSelected = false;
+        while (true) {
+            System.out.println("Enter the name of the hero you want to select: ");
+            String heroName = scanner.next();
+            Heroes hero = null;
+            if (Paladins.contains(heroName)) {
+                hero = Paladins.get(Paladins.indexOf(heroName));
+                break;
+            } else if (Sorcerers.contains(heroName)) {
+                hero = Sorcerers.get(Sorcerers.indexOf(heroName));
+                break;
+            } else if (Warriors.contains(heroName)) {
+                hero = Warriors.get(Warriors.indexOf(heroName));
+                break;
+            } else {
+                System.out.println("Invalid hero name! Please enter a valid hero name: ");
+                heroName = scanner.next();
+            }
+        }
     }
     // --------------------------------------------------------------------------------------------------------------
     // Main game function

@@ -27,7 +27,7 @@ public class Market implements IMarket{
 
     // --------------------------------------------------------------------------------------------------
     public Market(){
-// initialize the items for sale
+        // initialize the items for sale such that the market has 3 of each item
         List<Armors> armors = loadData.getArmors();
         List<Potions> Potions = loadData.getPotions();
         List<Weapons> weapons = loadData.getWeapons();
