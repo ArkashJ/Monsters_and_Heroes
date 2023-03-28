@@ -6,9 +6,11 @@ import main.Items.Potions;
 import main.Items.Spells.Spells;
 import main.Items.Weapons;
 import main.LoadData.LoadData;
+import main.Teams.TeamHeroes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import static main.Colors.colors.colorText;
 
@@ -21,6 +23,8 @@ public class Market {
     private ArrayList<Items> itemsForSale = new ArrayList<>();
     private ArrayList<Items> soldOutItems = new ArrayList<>();
     LoadData loadData = new LoadData();
+    Scanner scanner = new Scanner(System.in);
+
     // --------------------------------------------------------------------------------------------------
     public Market(){
 // initialize the items for sale
@@ -93,4 +97,98 @@ public class Market {
         }
     }
     // --------------------------------------------------------------------------------------------------
+
+    public boolean enterMarket(TeamHeroes teamHeroes){
+        // enter the market and buy or sell items
+        System.out.println(colorText("Welcome to the market", "black"));
+        System.out.println(colorText("You can buy or sell items here", "black"));
+        System.out.println("");
+        System.out.println("");
+        System.out.println("-------------------------------------- BUY/SELL/EXIT -----------------------------------------------");
+        System.out.println("To buy items, enter 'buy' | To sell items, enter 'sell' | To exit the market, enter 'exit'");
+        String input = scanner.nextLine();
+        // ------------------------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------------------------
+        while (!input.equalsIgnoreCase("buy") && !input.equalsIgnoreCase("sell") && !input.equalsIgnoreCase("exit")){
+            System.out.println("Please enter a valid input");
+            input = scanner.nextLine();
+            System.out.println("----------------------------------- BUY/SELL/EXIT --------------------------------------------");
+        }
+
+        // ------------------------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------------------------
+        while (!input.equalsIgnoreCase("exit")) {
+            // ------------------------------------------------------------------------------------------------------
+            // ------------------------------------------------------------------------------------------------------
+            System.out.println("Select Hero:");
+            teamHeroes.printHeroes();
+            String heroName = scanner.nextLine();
+
+            while (!teamHeroes.checkHeroes(heroName)){
+                System.out.println("Please enter a valid hero name");
+                heroName = scanner.nextLine();
+                System.out.println("-------------------------------- HERO NAME ----------------------------------------------------");
+
+            }
+
+            Heroes hero = teamHeroes.getHero(heroName);
+            System.out.println("You chose:");
+            hero.printStats();
+            System.out.println("");
+            System.out.println("");
+            // ------------------------------------------------------------------------------------------------------
+
+            if (input.equalsIgnoreCase("buy")){
+                System.out.println("----------------------------------- BUY ITEMS ----------------------------------------------------");
+                showItems();
+                boolean itemAvailable = false;
+                System.out.println("Enter the name of the item you want to buy");
+                String itemName = scanner.nextLine();
+                for (Items item : itemsForSale){
+                    if (item.getName().equals(itemName)){
+                        buyItem(hero, item);
+                        itemAvailable = true;
+                    }
+                }
+                if (!itemAvailable){
+                    System.out.println(colorText("This item is not available for sale", "red"));
+                    System.out.println("");
+                }
+                System.out.println("Want to buy another item? Enter 'buy' | To exit the market, enter 'exit'");
+                input = scanner.nextLine();
+                while (!input.equalsIgnoreCase("buy") && !input.equalsIgnoreCase("exit")){
+                    System.out.println("Please enter a valid input");
+                    input = scanner.nextLine();
+                }
+                if (input.equalsIgnoreCase("exit")) {
+                    input = "exit";
+                }
+            } else if (input.equalsIgnoreCase("sell")){
+                showSoldOutItems();
+                System.out.println("Enter the name of the item you want to sell");
+                String itemName = scanner.nextLine();
+                boolean itemAvailable = false;
+                for (Items item : soldOutItems){
+                    if (item.getName().equals(itemName)){
+                        sellItem(hero, item);
+                        itemAvailable = true;
+                    }
+                }
+                if (!itemAvailable){
+                    System.out.println(colorText("This item is not available for sale", "red"));
+                    System.out.println("");
+                }
+                while (!input.equalsIgnoreCase("buy") && !input.equalsIgnoreCase("exit")){
+                    System.out.println("Please enter a valid input");
+                    input = scanner.nextLine();
+                }
+                if (input.equalsIgnoreCase("exit")) {
+                    input = "exit";
+                }
+            }
+        }
+
+        System.out.println("Exiting the Market!!!");
+        return false;
+    }
 }

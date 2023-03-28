@@ -13,6 +13,7 @@ import main.Market.Market;
 import main.Positions.Positions;
 import main.Teams.TeamHeroes;
 import main.Teams.TeamMonsters;
+import main.World.Cell.Cell;
 import main.World.World;
 import main.StoryLine;
 import main.controls;
@@ -28,11 +29,15 @@ public class Battle {
     private TeamHeroes teamHeroes;
     private Market market;
     private Scanner scanner;
+    //----------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------
+    // constructor to start the game
     public Battle() {
         scanner = new Scanner(System.in);
         createNewGame();
     }
-
+    // --------------------------------------------------------------------------------------------------------------
+    // making the game
     public void createNewGame() {
         startStory();
         System.out.println("----------------------------------------------------------------------------------------");
@@ -51,73 +56,107 @@ public class Battle {
             resetWorld();
         }
         market = new Market(); // Initialize the market
-        // Load the items for the market here
         selectHeroes();
     }
-
-    public void selectHeroes() {
-        System.out.println("Select your team of heroes (maximum 3 heroes):");
-        // Implement hero selection logic here
-    }
-
+    // --------------------------------------------------------------------------------------------------------------
+    // Resetting the world to a new random world
     public void resetWorld() {
         world.generateRandomBoard();
         world.printWorld();
     }
-
+    // --------------------------------------------------------------------------------------------------------------
+    // Selecting Heroes for the game
+    public void selectHeroes() {
+        System.out.println("Select your team of heroes (maximum 3 heroes):");
+        // Implement hero selection logic here
+    }
+    // --------------------------------------------------------------------------------------------------------------
+    // Main game function
     public void mainGameLoop() {
         controls control = new controls();
         Scanner scanner = new Scanner(System.in);
         char input;
         while (true) {
-            // Implement main game loop logic here
             System.out.println("Enter your command (WASD for movement, Q to quit, I for info, M to enter market): ");
             input = scanner.next().charAt(0);
-
-            if (input == control.getQuit()) {
-                System.out.println("Quitting the game...");
-                endStory();
-                break;
-            }
-
-            // Move the hero based on user input
+            // ------------------------- QUIT THE GAME -------------------------
+            if (input == control.getQuit()) { QuitGame();   break; }
+            // ------------------------- PRINT GAME INFORMATION --------------------------------
+            if (input == control.getI()) { PrintInformation(world, teamHeroes, market, control); }
+            // ------------------------- MOVE THE HERO --------------------------------
             Positions currentPosition = teamHeroes.getHeroes().get(0).getPosition();
             Positions newPosition = control.move(currentPosition, input);
-
-            // Check if the new position is within the bounds of the world
-            if (newPosition.getX_pos() >= 0 && newPosition.getX_pos() < world.getSize() &&
-                    newPosition.getY_pos() >= 0 && newPosition.getY_pos() < world.getSize()) {
-
-                teamHeroes.getHeroes().get(0).getPosition().setPos(newPosition.getX_pos(), newPosition.getY_pos());
-//                enterCell(newPosition.getX_pos(), newPosition.getY_pos());
-            } else {
+            while (!(newPosition.getX_pos() >= 0 && newPosition.getX_pos() < world.getSize() &&
+                    newPosition.getY_pos() >= 0 && newPosition.getY_pos() < world.getSize())){
                 System.out.println("You cannot move outside the world!");
-            }
-
-            if (input == control.getI()) {
-                System.out.println("Display information about the world: ");
-                world.printWorldInfo();
-                System.out.println("Display information about the controls: ");
-                control.printControlInfo();
-                System.out.println("Display information about the heroes: ");
-                for (Heroes hero : teamHeroes.getHeroes()) {
-                    hero.printStats();
+                System.out.println("Enter your command (WASD for movement, Q to quit): ");
+                input = scanner.next().charAt(0);
+                if (input == control.getQuit()) {
+                    System.out.println("Quitting the game...");
+                    endStory();
+                    break;
                 }
-                System.out.println("Display information about the markets: ");
-                System.out.println("You can buy the following items: ");
-                market.showItems();
-                System.out.println("You can sell the following items: ");
-                market.showSoldOutItems();
+                newPosition = control.move(currentPosition, input);
             }
+            teamHeroes.getHeroes().get(0).getPosition().setPos(newPosition.getX_pos(), newPosition.getY_pos());
+            teamHeroes.setTeamPosition(teamHeroes.getHero(0));
+            // ------------------------- ENTER THE MARKET --------------------------------
+            if (input == control.getEnterMarket()) {
+                // Check if the user enters a market
+                Cell currentCell = world.getWorld()[newPosition.getX_pos()][newPosition.getY_pos()];
+                if (currentCell.isMarket()) {
+                    System.out.println("Entering the market...");
+                } else {
+                    System.out.println("There is no market here!");
+                }
+            }
+            //----------------------------------------------------------------------------------------------
         }
     }
-
+    // --------------------------------------------------------------------------------------------------------------
+    // Helper function print out the message when the user quits the game
+    public static void QuitGame(){
+        System.out.println("Quitting the game...");
+        endStory();
+    }
+    // Helper function to print out game information if the user asks for it
+    public static void PrintInformation(World world, TeamHeroes teamHeroes, Market market, controls control){
+        System.out.println("--------------------------------------------------------");
+        System.out.println();
+        System.out.println("Display information about the world: ");
+        world.printWorldInfo();
+        System.out.println();
+        System.out.println("Display information about the controls: ");
+        control.printControlInfo();
+        System.out.println();
+        System.out.println("Display information about the heroes: ");
+        System.out.println();
+        System.out.println("--------------------------------------------------------");
+        for (Heroes hero : teamHeroes.getHeroes()) {
+            hero.printStats();
+        }
+        System.out.println("--------------------------------------------------------");
+        System.out.println();
+        System.out.println();
+        System.out.println("Display information about the markets: ");
+        System.out.println("You can buy the following items: ");
+        market.showItems();
+        System.out.println();
+        System.out.println("You can sell the following items: ");
+        market.showSoldOutItems();
+        System.out.println();
+        System.out.println("--------------------------------------------------------");
+    }
+    // --------------------------------------------------------------------------------------------------------------
+    public void battle(TeamHeroes teamHeroes, TeamMonsters teamMonsters) {
+        // Implement battle logic here
+    }
+    // --------------------------------------------------------------------------------------------------------------
+    // Main function to start the game
     public static void main(String[] args) {
         Battle battle = new Battle();
         battle.mainGameLoop();
     }
+    // --------------------------------------------------------------------------------------------------------------
 
-    public void battle(TeamHeroes teamHeroes, TeamMonsters teamMonsters) {
-        // Implement battle logic here
-    }
 }

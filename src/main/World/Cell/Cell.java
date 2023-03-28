@@ -82,4 +82,8 @@ public class Cell {
         }
     }
 
+    public boolean isMarket(){
+        return type.equals("market");
+    }
+
 }
