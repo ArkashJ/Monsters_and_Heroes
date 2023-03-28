@@ -38,20 +38,15 @@ public class PotionFileReader implements Loadable<Potions> {
         return potionsList;
     }
 
-    public static void main(String[] args) {
-        PotionFileReader potionFileReader = new PotionFileReader();
-        List<Potions> potions = potionFileReader.loadFromFile("src/Instructions/Potions.txt");
-
-//        List<Heroes> Paladins = heroFileReader.loadFromFile("src/Instructions/Paladins.txt");
-//        List<Heroes> Sorcerers = heroFileReader.loadFromFile("src/Instructions/Sorcerers.txt");
-//        List<Heroes> Warriors = heroFileReader.loadFromFile("src/Instructions/Warriors.txt");
-        // Similarly, create instances of the other file readers and call their loadFromFile methods with the appropriate file paths
-
-        for (Potions potion : potions) {
-            potion.printStats();
-        }
-        System.out.println("--------------------");
-
-    }
+//    public static void main(String[] args) {
+//        PotionFileReader potionFileReader = new PotionFileReader();
+//        List<Potions> potions = potionFileReader.loadFromFile("src/Instructions/Potions.txt");
+//
+//        for (Potions potion : potions) {
+//            potion.printStats();
+//        }
+//        System.out.println("--------------------");
+//
+//    }
 
 }

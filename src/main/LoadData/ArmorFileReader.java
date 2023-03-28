@@ -38,19 +38,13 @@ public class ArmorFileReader implements Loadable<Armors> {
         return armorsList;
     }
 
-    public static void main(String[] args) {
-        ArmorFileReader armorFileReader = new ArmorFileReader();
-        List<Armors> armors = armorFileReader.loadFromFile("src/Instructions/Armory.txt");
-//        List<Heroes> Paladins = heroFileReader.loadFromFile("src/Instructions/Paladins.txt");
-//        List<Heroes> Sorcerers = heroFileReader.loadFromFile("src/Instructions/Sorcerers.txt");
-//        List<Heroes> Warriors = heroFileReader.loadFromFile("src/Instructions/Warriors.txt");
-        // Similarly, create instances of the other file readers and call their loadFromFile methods with the appropriate file paths
-
-        for (Armors armor : armors) {
-            armor.printStats();
-        }
-        System.out.println("--------------------");
-
-    }
+//    public static void main(String[] args) {
+//        ArmorFileReader armorFileReader = new ArmorFileReader();
+//        List<Armors> armors = armorFileReader.loadFromFile("src/Instructions/Armory.txt");
+//        for (Armors armor : armors) {
+//            armor.printStats();
+//        }
+//        System.out.println("--------------------");
+//    }
 
 }

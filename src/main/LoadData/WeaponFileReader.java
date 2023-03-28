@@ -43,10 +43,6 @@ public class WeaponFileReader implements Loadable<Weapons> {
     public static void main(String[] args) {
         WeaponFileReader weaponFileReader = new WeaponFileReader();
         List<Weapons> weapons = weaponFileReader.loadFromFile("src/Instructions/Weaponry.txt");
-//        List<Heroes> Paladins = heroFileReader.loadFromFile("src/Instructions/Paladins.txt");
-//        List<Heroes> Sorcerers = heroFileReader.loadFromFile("src/Instructions/Sorcerers.txt");
-//        List<Heroes> Warriors = heroFileReader.loadFromFile("src/Instructions/Warriors.txt");
-        // Similarly, create instances of the other file readers and call their loadFromFile methods with the appropriate file paths
 
         for (Weapons weapon : weapons) {
             weapon.printStats();

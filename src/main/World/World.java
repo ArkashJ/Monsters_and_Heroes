@@ -16,15 +16,18 @@ The world of the game is represented by a fixed, square grid of spaces. The grid
  An example world size is 8 spaces by 8 spaces. In this size our suggestion is to have 20% inaccessible spaces, 30% market spaces, and 50% common spaces.
  */
 
+import main.Colors.colors;
+
+import static main.Colors.colors.colorText;
+
 public class World {
     private Cell[][] world;
     private TeamHeroes teamHeroes;
     private int size;
 
-    public World(int size, TeamHeroes teamHeroes){
+    public World(int size){
         this.size = size;
         world = new Cell[size][size];
-        this.teamHeroes = teamHeroes;
         generateRandomBoard();
     }
 
@@ -72,16 +75,60 @@ public class World {
         }
     }
 
-    public void printWorld(){
+    public void printWorld() {
+        String separator = "|";
+        String cellFormat = " %s ";
+
+        // Print the top border
+        for (int i = 0; i < size; i++) {
+            System.out.print("+---");
+        }
+        System.out.println("+");
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                System.out.print(world[i][j].getType() + " ");
+                String cellType = world[i][j].getType();
+                String cellRepresentation;
+                String color = "gray";
+                switch (cellType) {
+                    case "inaccessible":
+                        cellRepresentation = "x";
+                        color = "red";
+                        break;
+                    case "market":
+                        cellRepresentation = "M";
+                        color = "yellow";
+                        break;
+                    case "common":
+                        cellRepresentation = " ";
+                        break;
+                    default:
+                        cellRepresentation = "?";
+                        break;
+                }
+                System.out.print(separator + colorText(String.format(cellFormat, cellRepresentation), color));
             }
-            System.out.println();
+            System.out.println(separator);
+
+            // Print the bottom border
+            for (int j = 0; j < size; j++) {
+                System.out.print("+---");
+            }
+            System.out.println("+");
         }
     }
 
+
+
     public void enterCell(int x, int y) {
+        if (world[x][y].getType().equals("inaccessible")){
+            System.out.println("You can't enter this cell");
+            return;
+        }
+        if (teamHeroes.getHeroes().get(0) == null) {
+            System.out.println("You don't have any heroes");
+            return;
+        } // Check if the first hero is null
         Heroes firstHero = teamHeroes.getHeroes().get(0); // Get the first hero from the team
         world[x][y].enterCell(firstHero); // Call the enterCell method of the Cell class with the first hero
     }
@@ -94,9 +141,10 @@ public class World {
 
 
     public static void main(String[] args){
-        TeamHeroes teamHeroes = new TeamHeroes("Team1", 3, 0, 0);
-        World world = new World(3, teamHeroes);
+        World world = new World(8);
         world.printWorld();
+//        world.enterCell(0, 0);
+//        world.moveHeroes(1, 1);
     }
 
 }

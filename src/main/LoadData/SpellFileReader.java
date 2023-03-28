@@ -1,7 +1,5 @@
 package main.LoadData;
 
-
-
 import main.Characters.Monsters.Monsters;
 import main.Items.Armors;
 import main.Items.Potions;
@@ -40,31 +38,31 @@ public class SpellFileReader implements Loadable<Spells> {
         return spellsList;
     }
 
-    public static void main(String[] args) {
-        SpellFileReader spellFileReader = new SpellFileReader();
-        List<Spells> fireSpells = spellFileReader.loadFromFile("src/Instructions/FireSpells.txt");
-        List<Spells> iceSpells = spellFileReader.loadFromFile("src/Instructions/IceSpells.txt");
-        List<Spells> lightningSpells = spellFileReader.loadFromFile("src/Instructions/LightningSpells.txt");
-//        List<Heroes> Paladins = heroFileReader.loadFromFile("src/Instructions/Paladins.txt");
-//        List<Heroes> Sorcerers = heroFileReader.loadFromFile("src/Instructions/Sorcerers.txt");
-//        List<Heroes> Warriors = heroFileReader.loadFromFile("src/Instructions/Warriors.txt");
-        // Similarly, create instances of the other file readers and call their loadFromFile methods with the appropriate file paths
-
-        for (Spells spell : fireSpells) {
-            spell.printStats();
-        }
-        System.out.println("--------------------");
-
-        for (Spells spell : iceSpells) {
-            spell.printStats();
-        }
-        System.out.println("--------------------");
-
-        for (Spells spell : lightningSpells) {
-            spell.printStats();
-        }
-        System.out.println("--------------------");
-
-    }
+//    public static void main(String[] args) {
+//        SpellFileReader spellFileReader = new SpellFileReader();
+//        List<Spells> fireSpells = spellFileReader.loadFromFile("src/Instructions/FireSpells.txt");
+//        List<Spells> iceSpells = spellFileReader.loadFromFile("src/Instructions/IceSpells.txt");
+//        List<Spells> lightningSpells = spellFileReader.loadFromFile("src/Instructions/LightningSpells.txt");
+////        List<Heroes> Paladins = heroFileReader.loadFromFile("src/Instructions/Paladins.txt");
+////        List<Heroes> Sorcerers = heroFileReader.loadFromFile("src/Instructions/Sorcerers.txt");
+////        List<Heroes> Warriors = heroFileReader.loadFromFile("src/Instructions/Warriors.txt");
+//        // Similarly, create instances of the other file readers and call their loadFromFile methods with the appropriate file paths
+//
+//        for (Spells spell : fireSpells) {
+//            spell.printStats();
+//        }
+//        System.out.println("--------------------");
+//
+//        for (Spells spell : iceSpells) {
+//            spell.printStats();
+//        }
+//        System.out.println("--------------------");
+//
+//        for (Spells spell : lightningSpells) {
+//            spell.printStats();
+//        }
+//        System.out.println("--------------------");
+//
+//    }
 
 }
