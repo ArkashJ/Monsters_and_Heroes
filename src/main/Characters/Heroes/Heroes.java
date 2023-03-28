@@ -87,11 +87,6 @@ public class Heroes extends Characters implements IHeroes {
         return level;
     }
 
-//    @Override
-//    public double getHP() {
-//        return super.getHP();
-//    }
-
     public Inventory getInventory() { return inventory; }
     //-------------------------------------------------------------------------------------------------------------------
     // Setters to get player statistics
@@ -115,6 +110,7 @@ public class Heroes extends Characters implements IHeroes {
 
     public void setExperience(int experience) { this.experience = experience; }
 
+    public void setPosition(Positions position) { this.position = position; }
     //------------------------------------------------------------------------------------------------------------------------
     //print player statistics before the game starts
     public void printStats(){
