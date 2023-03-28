@@ -4,8 +4,10 @@ import main.Items.Spells.Spells;
 
 public class LightningSpells extends Spells {
     private double extraDodgeChance;
-    public LightningSpells(String name, int price, int level, double damage, int manaCost, String spellType, double extraDodgeChance) {
-        super(name, price, level, damage, manaCost, "LightningSpell");
+    String spellType = "LightningSpell";
+    public LightningSpells(String name, int price, int level, double damage, int manaCost) {
+        super(name, price, level, damage, manaCost);
+        this.spellType = "LightningSpell";
         this.extraDodgeChance = 0.05;    // increases dodge chance by 5%
     }
     public double getExtraDodgeChance() {

@@ -40,23 +40,23 @@ public class Spells extends Items {
     }
 
     // ----------------------------------------------- Constructors -----------------------------------------------
-    public Spells(String name, int price, int level, double damage, int manaCost, String spellType) {
+    public Spells(String name, int price, int level, double damage, int manaCost ) {
         super(name, price, level);
         this.damage = damage;
         this.manaCost = manaCost;
-        this.spellType = spellType;
+//        this.spellType = spellType;
     }
     // ----------------------------------------------- Methods -----------------------------------------------
     public void printStats(){
-        System.out.println("The stats for this armor are as follows: ");
+        System.out.println("The stats for this spell are as follows: ");
         String tempName = colorText(String.format("Name: %s", name), "red");
         String tempLevel = colorText(String.format("Level: %d", level), "green");
         String tempPrice = colorText(String.format("HP: %d", price), "blue");
         String tempDamage = colorText(String.format("MP: %,.3f", damage), "purple");
         String tempManaCost = colorText(String.format("MP: %d", manaCost), "yellow");
-        String tempSpellType = colorText(String.format("MP: %s", spellType), "black");
+//        String tempSpellType = colorText(String.format("MP: %s", spellType), "black");
         System.out.println(tempName + "  |  " + tempLevel + "  |  " + tempPrice + "  |  " + tempDamage + "  |  " +
-                tempManaCost + "  |  " + tempSpellType + "  |  ");
+                tempManaCost + "  |  ");
     }
 
 }
