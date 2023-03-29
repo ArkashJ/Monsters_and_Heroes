@@ -39,6 +39,16 @@ public class FightRules implements IFightRules {
         double heroMP = hero.getMP();
         hero.setMP(heroMP*1.1);
     }
+
+    public void updateHPAtLevelUP(Heroes hero){
+        double heroHP = hero.getHP();
+        hero.setHP(heroHP*1.1);
+    }
+
+    public void levelUp(Heroes hero){
+        int heroLevel = hero.getLevel();
+        hero.setLevel(heroLevel+1);
+    }
     //---------------------------------------------------------------------------------------------------------
     // rules to find hero's attack damage if they have a weapon in their inventory
     public double attackDamage(Heroes hero){

@@ -3,11 +3,13 @@ package main.Battle;
 import main.Characters.Heroes.Heroes;
 import main.Characters.Monsters.Monsters;
 import main.FightRules.FightRules;
+import main.Items.Potions;
 import main.LoadData.LoadData;
 
 import java.util.*;
 
 import static main.Colors.colors.colorText;
+import static main.FightRules.FightRules.heroSkillsUpgrade;
 
 public class Fight{
     private FightRules fightRules;
@@ -32,9 +34,15 @@ public class Fight{
             System.out.println("Enter action for " + hero.getName() + ": (potion/spell/weapon/armor/information)");
             String action = inputScanner.nextLine().toLowerCase();
 
+            while (!action.equals("potion") && !action.equals("spell") && !action.equals("weapon") && !action.equals("armor") && !action.equals("information")) {
+                System.out.println("Invalid action. Try again.");
+                action = inputScanner.nextLine().toLowerCase();
+            }
+
             switch (action) {
                 case "potion":
                     // Code to use potion
+                    Potions potion = (Potions) hero.getInventory().getItem("Potion");
                     break;
                 case "spell":
                     // Code to use spell
@@ -67,6 +75,15 @@ public class Fight{
                 fightRules.goldGain(hero, monsters);
                 fightRules.expGain(hero, monsters);
                 fightRules.recoverFromBattle(hero);
+                heroSkillsUpgrade(hero);
+                int levelUpExpNeeded = fightRules.expToNextLevel(hero);
+
+                if (hero.getExperience() >= levelUpExpNeeded) {
+                    fightRules.levelUp(hero);
+                    fightRules.updateManaAtLevelUP(hero);
+                    fightRules.updateHPAtLevelUP(hero);
+                }
+
                 System.out.println(colorText(hero.getName() + " has defeated ", "black") + colorText(monsters.getName() + "!", "purple"));
                 battleEnded = true;
                 break;

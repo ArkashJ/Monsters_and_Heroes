@@ -4,6 +4,7 @@ import java.util.HashMap;
 import main.Items.Armors;
 import main.Items.Items;
 import main.Inventory.IInventory;
+import main.Items.Potions;
 import main.Items.Spells.Spells;
 import main.Items.Weapons;
 
@@ -40,19 +41,23 @@ public class Inventory implements IInventory{
     public Items getItem(String itemName) {
         Items item = inventory.get(itemName);
         if (item instanceof Spells) {
+            size--;
             return (Spells) item;
         }
 
         if (item instanceof Weapons) {
+            size--;
             return (Weapons) item;
         }
 
-        if (item instanceof Armors) {
-            return (Armors) item;
-        }
-        // Add similar conditions for other subclasses if necessary
-        if (item != null) {
+        if (item instanceof Potions){
             size--;
+            return (Potions) item;
+        }
+
+        if (item instanceof Armors) {
+            size--;
+            return (Armors) item;
         }
 
         return item;

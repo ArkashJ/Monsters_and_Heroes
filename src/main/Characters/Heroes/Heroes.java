@@ -110,6 +110,7 @@ public class Heroes extends Characters implements IHeroes {
 
     public void setExperience(int experience) { this.experience = experience; }
 
+    public void setLevel(int level) { this.level = level; }
     public void setPosition(Positions position) { this.position = position; }
     public void revive() { this.HP = 100; }
 
