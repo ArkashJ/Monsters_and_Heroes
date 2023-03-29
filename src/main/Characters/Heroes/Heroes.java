@@ -112,6 +112,18 @@ public class Heroes extends Characters implements IHeroes {
 
     public void setPosition(Positions position) { this.position = position; }
     public void revive() { this.HP = 100; }
+
+//    public double getArmorDefense() {
+//        if (inventory. == 0) {
+//            return 0;
+//        }
+//        return inventory.getArmorDefense();
+//    }
+
+    public void takeDamage(double damage) {
+        this.HP = Math.max(0, this.HP - damage);
+    }
+
     //------------------------------------------------------------------------------------------------------------------------
     //print player statistics before the game starts
     public void printStats(){

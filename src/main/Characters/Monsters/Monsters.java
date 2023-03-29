@@ -80,6 +80,12 @@ public class Monsters extends Characters implements IMonsters {
     public void setDodgeAgility(double dodgeAgility) {
         this.dodgeAgility = dodgeAgility;
     }
+
+    public void takeDamage(double damage) {
+        double damageTaken = Math.max(0, damage - this.defenceValue);
+        this.HP = Math.max(0, this.HP - damageTaken);
+    }
+
     //---------------------------------------------------------------------------------------------------------------------------------------
     public void printStats(){
         System.out.println("The stats for this monster are as follows: ");
