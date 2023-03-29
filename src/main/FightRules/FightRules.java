@@ -2,7 +2,9 @@ package main.FightRules;
 import main.Characters.Heroes.Heroes;
 import main.Characters.Monsters.Monsters;
 import main.Inventory.Inventory;
+import main.Items.Armors;
 import main.Items.Items;
+import main.Items.Potions;
 import main.Items.Spells.Spells;
 import main.Items.Weapons;
 
@@ -158,4 +160,74 @@ public class FightRules implements IFightRules {
         return 0;
     }
     //---------------------------------------------------------------------------------------------------------
+    public void usePotion(Heroes hero, Potions potion){
+//        Inventory inventory = hero.getInventory();
+//        Potions potion = (Potions) inventory.getItem(potionName);
+        String property = potion.getProperty();
+        switch (property){
+            case "Health":
+                double heroHP = hero.getHP();
+                double potionHP = potion.getEffectAmount();
+                hero.setHP(heroHP + potionHP);
+                break;
+            case "Strength":
+                double heroStrength = hero.getStrength();
+                double potionStrength = potion.getEffectAmount();
+                hero.setStrength(heroStrength + potionStrength);
+                break;
+            case "Mana":
+                double heroMP = hero.getMP();
+                double potionMP = potion.getEffectAmount();
+                hero.setMP(heroMP + potionMP);
+                break;
+            case "Agility":
+                double heroAgility = hero.getAgility();
+                double potionAgility = potion.getEffectAmount();
+                hero.setAgility(heroAgility + potionAgility);
+                break;
+            case "Health/Mana/Strength/Agility":
+                double heroHP2 = hero.getHP();
+                double value = potion.getEffectAmount();
+                hero.setHP(heroHP2 + value);
+                double heroMP2 = hero.getMP();
+                hero.setMP(heroMP2 + value);
+                double heroStrength2 = hero.getStrength();
+                hero.setStrength(heroStrength2 + value);
+                double heroAgility2 = hero.getAgility();
+                hero.setAgility(heroAgility2 + value);
+                break;
+            case "All":
+                double heroHP3 = hero.getHP();
+                double value2 = potion.getEffectAmount();
+                hero.setHP(heroHP3 + value2);
+                double heroMP3 = hero.getMP();
+                hero.setMP(heroMP3 + value2);
+                double heroStrength3 = hero.getStrength();
+                hero.setStrength(heroStrength3 + value2);
+                double heroAgility3 = hero.getAgility();
+                hero.setAgility(heroAgility3 + value2);
+                double heroDexterity3 = hero.getDexterity();
+                hero.setDexterity(heroDexterity3 + value2);
+                break;
+        }
+    }
+
+    public void useSpell(Heroes hero, Spells spell, Monsters monsters){
+        String spellName =  spell.getName();
+        double extraDamage = spell.getDamage();
+        double MonsterHP = monsters.getHP();
+        monsters.takeDamage(extraDamage);
+    }
+
+    public void useWeapon(Heroes hero, Weapons weapon, Monsters monsters){
+        String weaponName =  weapon.getName();
+        double extraDamage = weapon.getDamage();
+        monsters.takeDamage(extraDamage);
+    }
+
+    public double useArmor(Heroes hero, Armors armor){
+        String armorName =  armor.getName();
+        double extraDefense = armor.getDamageReduction();
+        return extraDefense;
+    }
 }

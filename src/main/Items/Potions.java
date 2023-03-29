@@ -30,7 +30,6 @@ public class Potions extends Items{
         this.effectAmount = effectAmount;
         this.property = property;
     }
-
     // -------------------------------------------  Methods  ---------------------------------------------------------------
     public void printStats(){
         System.out.println("The stats for this potion are as follows: ");

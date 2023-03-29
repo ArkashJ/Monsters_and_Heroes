@@ -121,7 +121,8 @@ public class Heroes extends Characters implements IHeroes {
 //        return inventory.getArmorDefense();
 //    }
 
-    public void takeDamage(double damage) {
+    public void takeDamage(double damage, double armorDefense) {
+        damage = Math.max(0, damage - armorDefense);
         this.HP = Math.max(0, this.HP - damage);
     }
 

@@ -3,7 +3,10 @@ package main.Battle;
 import main.Characters.Heroes.Heroes;
 import main.Characters.Monsters.Monsters;
 import main.FightRules.FightRules;
+import main.Items.Armors;
 import main.Items.Potions;
+import main.Items.Spells.Spells;
+import main.Items.Weapons;
 import main.LoadData.LoadData;
 
 import java.util.*;
@@ -29,7 +32,7 @@ public class Fight{
             Heroes hero = heroesList.get(heroesIndex);
             double heroDodgeChance = fightRules.getDodgeChance(hero);
             double monsterDodgeChance = fightRules.getDodgeChance(monsters);
-
+            double damageReduction = 0;
             // Prompt user to enter action
             System.out.println("Enter action for " + hero.getName() + ": (potion/spell/weapon/armor/information)");
             String action = inputScanner.nextLine().toLowerCase();
@@ -43,15 +46,47 @@ public class Fight{
                 case "potion":
                     // Code to use potion
                     Potions potion = (Potions) hero.getInventory().getItem("Potion");
+                    if (potion != null) {
+                        fightRules.usePotion(hero, potion);
+                        hero.getInventory().removeItem(potion.getName());
+                    } else {
+                        System.out.println("You don't have any potions.");
+                    }
                     break;
                 case "spell":
                     // Code to use spell
+                    Spells spell = (Spells) hero.getInventory().getItem("Spell");
+                    if (spell != null) {
+                        fightRules.useSpell(hero, spell, monsters);
+                        hero.getInventory().removeItem(spell.getName());
+                    } else {
+                        System.out.println("You don't have any spells.");
+                    }
                     break;
                 case "weapon":
                     // Code to use weapon
+                    Weapons weapons = (Weapons) hero.getInventory().getItem("Weapon");
+                    if (weapons != null) {
+                        fightRules.useWeapon(hero, weapons, monsters);
+                        hero.getInventory().removeItem(weapons.getName());
+                    } else {
+                        System.out.println("You don't have any weapons.");
+                    }
                     break;
                 case "armor":
                     // Code to use armor
+                    Armors armors = (Armors) hero.getInventory().getItem("Armor");
+                    if (armors != null) {
+                        if (damageReduction > 0){
+                            System.out.println("You already have an armor equipped.");
+                            continue;
+                        }
+                        damageReduction = fightRules.useArmor(hero, armors);
+                        hero.getInventory().removeItem(armors.getName());
+
+                    } else {
+                        System.out.println("You don't have any armors.");
+                    }
                     break;
                 case "information":
                     // Provide the requested information
@@ -92,7 +127,7 @@ public class Fight{
             // Check if the monster dodges
             if (Math.random() > monsterDodgeChance) {
                 double monsterAttackDamage = monsters.getBaseDamage();
-                hero.takeDamage(monsterAttackDamage);
+                hero.takeDamage(monsterAttackDamage, damageReduction);
                 System.out.println(colorText(monsters.getName() + " attacks ", "blue") + colorText(hero.getName() + " for ", "yellow") + colorText(monsterAttackDamage + " damage.", "red"));
             }
 
