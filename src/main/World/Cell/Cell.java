@@ -76,8 +76,8 @@ public class Cell implements ICell{
             heroPosition.setPos(previousX, previousY);
         } else if (type.equals("market")){
             System.out.println("You entered the market: ");
-            market.showItems();
-            market.showSoldOutItems();
+//            market.showItems();
+//            market.showSoldOutItems();
         } else if (type.equals("common")){
             int battleThreshold = 3;
             Random random = new Random();

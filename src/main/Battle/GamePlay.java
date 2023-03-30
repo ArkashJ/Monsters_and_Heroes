@@ -37,6 +37,7 @@ public class GamePlay {
     public GamePlay() {
         scanner = new Scanner(System.in);
         createNewGame();
+        fight = new Fight();
     }
     // --------------------------------------------------------------------------------------------------------------
     // making the game
@@ -181,28 +182,6 @@ public class GamePlay {
                 continue;
             }
             // ------------------------- MOVE THE HERO --------------------------------
-//            Positions currentPosition = teamHeroes.getHeroes().get(0).getPosition();
-//            Positions newPosition = control.move(currentPosition, input);
-//            while (!(newPosition.getX_pos() >= 0 && newPosition.getX_pos() < world.getSize() &&
-//                    newPosition.getY_pos() >= 0 && newPosition.getY_pos() < world.getSize())){
-//                System.out.println("You cannot move outside the world!");
-//                System.out.println("Enter your command (WASD for movement, Q to quit): ");
-//                input = scanner.next().charAt(0);
-//                if (input == control.getQuit()) {
-//                    System.out.println("Quitting the game...");
-//                    endStory();
-//                    break;
-//                }
-//                newPosition = control.move(currentPosition, input);
-//            }
-//            teamHeroes.getHeroes().get(0).getPosition().setPos(newPosition.getX_pos(), newPosition.getY_pos());
-//            teamHeroes.setTeamPosition(teamHeroes.getHero(0));
-//            // check if getBattle is true or not for this cell in the world, if it is true, then we need to start the battle
-//            Cell thisCell = world.getWorld()[newPosition.getX_pos()][newPosition.getY_pos()];
-//            if (thisCell.getBattle()) {
-//                // Start the battle
-//                fight.battle((List<Heroes>) teamHeroes);
-//            }
             Heroes hero = teamHeroes.getHeroes().get(0);
             Positions currentPosition = hero.getPosition();
             Positions newPosition = control.move(currentPosition, input);
@@ -227,7 +206,11 @@ public class GamePlay {
 
             if (thisCell.getBattle()) {
                 // Start the battle
-                fight.battle((List<Heroes>) teamHeroes);
+               boolean done = fight.battle(teamHeroes);
+                if (done) {
+                    System.out.println("You loose, better luck next time!");
+                     break;
+                }
             }
             // ------------------------- ENTER THE MARKET --------------------------------
             if (input == control.getEnterMarket()) {

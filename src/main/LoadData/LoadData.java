@@ -51,86 +51,86 @@ public class LoadData {
     }
 
     public List<Spells> getFireSpells() {
-        for (Spells spell : fireSpells) {
-            spell.printStats();
-        }
+//        for (Spells spell : fireSpells) {
+//            spell.printStats();
+//        }
         return fireSpells;
     }
 
     public List<Spells> getIceSpells() {
-        for (Spells spell : iceSpells) {
-            spell.printStats();
-        }
+//        for (Spells spell : iceSpells) {
+//            spell.printStats();
+//        }
         return iceSpells;
     }
 
     public List<Spells> getLightningSpells() {
-        for (Spells spell : lightningSpells) {
-            spell.printStats();
-        }
+//        for (Spells spell : lightningSpells) {
+//            spell.printStats();
+//        }
         return lightningSpells;
     }
 
     public List<Armors> getArmors() {
-        for (Armors armor : armors) {
-            armor.printStats();
-        }
+//        for (Armors armor : armors) {
+//            armor.printStats();
+//        }
         return armors;
     }
 
     public List<Heroes> getPaladins() {
-        for (Heroes hero : paladins) {
-            hero.printStats();
-        }
+//        for (Heroes hero : paladins) {
+//            hero.printStats();
+//        }
         return paladins;
     }
 
     public List<Heroes> getSorcerers() {
-        for (Heroes hero : sorcerers) {
-            hero.printStats();
-        }
+//        for (Heroes hero : sorcerers) {
+//            hero.printStats();
+//        }
         return sorcerers;
     }
 
     public List<Heroes> getWarriors() {
-        for (Heroes hero : warriors) {
-            hero.printStats();
-        }
+//        for (Heroes hero : warriors) {
+//            hero.printStats();
+//        }
         return warriors;
     }
 
     public List<Monsters> getExoskeletons() {
-        for (Monsters monster : Exoskeletons) {
-            monster.printStats();
-        }
+//        for (Monsters monster : Exoskeletons) {
+//            monster.printStats();
+//        }
         return Exoskeletons;
     }
 
     public List<Monsters> getSpirits() {
-        for (Monsters monster : Spirits) {
-            monster.printStats();
-        }
+//        for (Monsters monster : Spirits) {
+//            monster.printStats();
+//        }
         return Spirits;
     }
 
     public List<Monsters> getDragons() {
-        for (Monsters monster : Dragons) {
-            monster.printStats();
-        }
+//        for (Monsters monster : Dragons) {
+//            monster.printStats();
+//        }
         return Dragons;
     }
 
     public List<Potions> getPotions() {
-        for (Potions potion : Potions) {
-            potion.printStats();
-        }
+//        for (Potions potion : Potions) {
+//            potion.printStats();
+//        }
         return Potions;
     }
 
     public List<Weapons> getWeapons() {
-        for (Weapons weapon : weapons) {
-            weapon.printStats();
-        }
+//        for (Weapons weapon : weapons) {
+//            weapon.printStats();
+//        }
         return weapons;
     }
 

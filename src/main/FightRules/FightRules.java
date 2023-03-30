@@ -7,6 +7,7 @@ import main.Items.Items;
 import main.Items.Potions;
 import main.Items.Spells.Spells;
 import main.Items.Weapons;
+import main.Teams.TeamHeroes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -114,12 +115,12 @@ public class FightRules implements IFightRules {
     }
     //---------------------------------------------------------------------------------------------------------
     // The monster's level is equal to the highest level of the heroes in the team
-    public void determineMonsterLevel(List<Heroes> heroesList, List<Monsters> monstersList){
+    public void determineMonsterLevel(TeamHeroes heroesList, List<Monsters> monstersList){
         int maxLevel = 0;
         int sumOfHP = 0;
-        int numHeroes = heroesList.size();
+        int numHeroes = heroesList.getSize();
 
-        for (Heroes heroes : heroesList) {
+        for (Heroes heroes : heroesList.getHeroes()) {
             int heroLevel = heroes.getLevel();
             sumOfHP += heroes.getHP();
             if (heroLevel > maxLevel) {

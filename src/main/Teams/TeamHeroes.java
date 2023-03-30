@@ -70,4 +70,11 @@ public class TeamHeroes extends Team {
         System.out.println("Moving team to position: " + x_position + ", " + y_position);
     }
 
+    public int getSize(){
+        return characters.size();
+    }
+
+    public Heroes get(int index){
+        return (Heroes) characters.get(index);
+    }
 }

@@ -8,6 +8,7 @@ import main.Items.Potions;
 import main.Items.Spells.Spells;
 import main.Items.Weapons;
 import main.LoadData.LoadData;
+import main.Teams.TeamHeroes;
 
 import java.util.*;
 
@@ -19,10 +20,11 @@ public class Fight{
     private LoadData loadData;
     public Fight() {
         fightRules = new FightRules();
+        loadData = new LoadData();
     }
     // -------------------------------------------------------------------------------------
-    public void battle(List<Heroes> heroesList) {
-        ArrayList<Monsters> monstersList = createMonstersList(heroesList.size());
+    public boolean battle(TeamHeroes heroesList) {
+        ArrayList<Monsters> monstersList = createMonstersList(heroesList.getSize());
         fightRules.determineMonsterLevel(heroesList, monstersList);
         int heroesIndex = 0;
         int monstersIndex = 0;
@@ -45,7 +47,7 @@ public class Fight{
             }
 
             switch (action) {
-                case "potion":
+                case "potion" -> {
                     // Code to use potion
                     Potions potion = (Potions) hero.getInventory().getItem("Potion");
                     if (potion != null) {
@@ -54,8 +56,8 @@ public class Fight{
                     } else {
                         System.out.println("You don't have any potions.");
                     }
-                    break;
-                case "spell":
+                }
+                case "spell" -> {
                     // Code to use spell
                     Spells spell = (Spells) hero.getInventory().getItem("Spell");
                     if (spell != null) {
@@ -64,8 +66,8 @@ public class Fight{
                     } else {
                         System.out.println("You don't have any spells.");
                     }
-                    break;
-                case "weapon":
+                }
+                case "weapon" -> {
                     // Code to use weapon
                     Weapons weapons = (Weapons) hero.getInventory().getItem("Weapon");
                     if (weapons != null) {
@@ -74,12 +76,12 @@ public class Fight{
                     } else {
                         System.out.println("You don't have any weapons.");
                     }
-                    break;
-                case "armor":
+                }
+                case "armor" -> {
                     // Code to use armor
                     Armors armors = (Armors) hero.getInventory().getItem("Armor");
                     if (armors != null) {
-                        if (damageReduction > 0){
+                        if (damageReduction > 0) {
                             System.out.println("You already have an armor equipped.");
                             continue;
                         }
@@ -89,70 +91,121 @@ public class Fight{
                     } else {
                         System.out.println("You don't have any armors.");
                     }
-                    break;
-                case "information":
+                }
+                case "information" -> {
                     // Provide the requested information
                     System.out.println(hero);
                     System.out.println(monsters);
                     continue;
-                default:
+                }
+                case "attack" ->{
+                    // Check if the hero dodges
+                    if (Math.random() > heroDodgeChance) {
+                        double attackDamage = fightRules.attackDamage(hero);
+                        monsters.takeDamage(attackDamage);
+                        System.out.println(colorText(hero.getName() + " attacks ", "yellow" ) + colorText( monsters.getName() + " for ", "blue" )+ colorText( attackDamage + " damage.", "red"));
+                    }
+
+                    // If the monster's HP is 0 or less, the battle is won
+                    if (monsters.getHP() <= 0) {
+                        monstersIndex++;
+                        System.out.println(colorText(hero.getName() + " has defeated ", "black") + colorText(monsters.getName() + "!", "purple"));
+                        // If there are no more monsters, the battle is won
+                        if (monstersIndex >= monstersList.size()) {
+                            System.out.println(colorText("All monsters have been defeated!", "green"));
+                            battleEnded = true;
+                            reviveHeroes(heroesList);
+                            fightRules.goldGain(hero, monsters);
+                            fightRules.expGain(hero, monsters);
+                            heroSkillsUpgrade(hero);
+                            int levelUpExpNeeded = fightRules.expToNextLevel(hero);
+
+                            if (hero.getExperience() >= levelUpExpNeeded) {
+                                fightRules.levelUp(hero);
+                                fightRules.updateManaAtLevelUP(hero);
+                                fightRules.updateHPAtLevelUP(hero);
+                            }
+                            break;
+                        }
+                    }
+
+                    // Check if the monster dodges
+                    if (Math.random() > monsterDodgeChance) {
+                        double monsterAttackDamage = monsters.getBaseDamage();
+                        hero.takeDamage(monsterAttackDamage, damageReduction);
+                        System.out.println(colorText(monsters.getName() + " attacks ", "blue") + colorText(hero.getName() + " for ", "yellow") + colorText(monsterAttackDamage + " damage.", "red"));
+                    }
+
+                    // If the hero's HP is 0 or less, the hero is defeated
+                    if (hero.getHP() <= 0) {
+                        heroesIndex++;
+                        System.out.println(colorText(hero.getName() + " has been defeated!", "gray"));
+                        // If there are no more heroes, the battle is lost
+                        if (heroesIndex >= heroesList.getSize()) {
+                            System.out.println(colorText("All heroes have been defeated!", "red"));
+                            battleEnded = true;
+                        }
+                    }
+                }
+                default -> {
                     System.out.println("Invalid action. Try again.");
                     continue;
-            }
-
-            // Check if the hero dodges
-            if (Math.random() > heroDodgeChance) {
-                double attackDamage = fightRules.attackDamage(hero);
-                monsters.takeDamage(attackDamage);
-                System.out.println(colorText(hero.getName() + " attacks ", "yellow" ) + colorText( monsters.getName() + " for ", "blue" )+ colorText( attackDamage + " damage.", "red"));
-            }
-
-            // If the monster's HP is 0 or less, the battle is won
-            if (monsters.getHP() <= 0) {
-                monstersIndex++;
-                System.out.println(colorText(hero.getName() + " has defeated ", "black") + colorText(monsters.getName() + "!", "purple"));
-                // If there are no more monsters, the battle is won
-                if (monstersIndex >= monstersList.size()) {
-                    System.out.println(colorText("All monsters have been defeated!", "green"));
-                    battleEnded = true;
-                    reviveHeroes(heroesList);
-                    fightRules.goldGain(hero, monsters);
-                    fightRules.expGain(hero, monsters);
-                    heroSkillsUpgrade(hero);
-                    int levelUpExpNeeded = fightRules.expToNextLevel(hero);
-
-                    if (hero.getExperience() >= levelUpExpNeeded) {
-                        fightRules.levelUp(hero);
-                        fightRules.updateManaAtLevelUP(hero);
-                        fightRules.updateHPAtLevelUP(hero);
-                    }
-                    break;
                 }
             }
-
-            // Check if the monster dodges
-            if (Math.random() > monsterDodgeChance) {
-                double monsterAttackDamage = monsters.getBaseDamage();
-                hero.takeDamage(monsterAttackDamage, damageReduction);
-                System.out.println(colorText(monsters.getName() + " attacks ", "blue") + colorText(hero.getName() + " for ", "yellow") + colorText(monsterAttackDamage + " damage.", "red"));
-            }
-
-            // If the hero's HP is 0 or less, the hero is defeated
-            if (hero.getHP() <= 0) {
-                heroesIndex++;
-                System.out.println(colorText(hero.getName() + " has been defeated!", "gray"));
-                // If there are no more heroes, the battle is lost
-                if (heroesIndex >= heroesList.size()) {
-                    System.out.println(colorText("All heroes have been defeated!", "red"));
-                    battleEnded = true;
-                }
-            }
+//            // Check if the hero dodges
+//            if (Math.random() > heroDodgeChance) {
+//                double attackDamage = fightRules.attackDamage(hero);
+//                monsters.takeDamage(attackDamage);
+//                System.out.println(colorText(hero.getName() + " attacks ", "yellow" ) + colorText( monsters.getName() + " for ", "blue" )+ colorText( attackDamage + " damage.", "red"));
+//            }
+//
+//            // If the monster's HP is 0 or less, the battle is won
+//            if (monsters.getHP() <= 0) {
+//                monstersIndex++;
+//                System.out.println(colorText(hero.getName() + " has defeated ", "black") + colorText(monsters.getName() + "!", "purple"));
+//                // If there are no more monsters, the battle is won
+//                if (monstersIndex >= monstersList.size()) {
+//                    System.out.println(colorText("All monsters have been defeated!", "green"));
+//                    battleEnded = true;
+//                    reviveHeroes(heroesList);
+//                    fightRules.goldGain(hero, monsters);
+//                    fightRules.expGain(hero, monsters);
+//                    heroSkillsUpgrade(hero);
+//                    int levelUpExpNeeded = fightRules.expToNextLevel(hero);
+//
+//                    if (hero.getExperience() >= levelUpExpNeeded) {
+//                        fightRules.levelUp(hero);
+//                        fightRules.updateManaAtLevelUP(hero);
+//                        fightRules.updateHPAtLevelUP(hero);
+//                    }
+//                    break;
+//                }
+//            }
+//
+//            // Check if the monster dodges
+//            if (Math.random() > monsterDodgeChance) {
+//                double monsterAttackDamage = monsters.getBaseDamage();
+//                hero.takeDamage(monsterAttackDamage, damageReduction);
+//                System.out.println(colorText(monsters.getName() + " attacks ", "blue") + colorText(hero.getName() + " for ", "yellow") + colorText(monsterAttackDamage + " damage.", "red"));
+//            }
+//
+//            // If the hero's HP is 0 or less, the hero is defeated
+//            if (hero.getHP() <= 0) {
+//                heroesIndex++;
+//                System.out.println(colorText(hero.getName() + " has been defeated!", "gray"));
+//                // If there are no more heroes, the battle is lost
+//                if (heroesIndex >= heroesList.getSize()) {
+//                    System.out.println(colorText("All heroes have been defeated!", "red"));
+//                    battleEnded = true;
+//                }
+//            }
         }
+        return battleEnded;
     }
 
     // -------------------------------------------------------------------------------------
-    public void reviveHeroes(List<Heroes> heroesList) {
-        for (Heroes hero : heroesList) {
+    public void reviveHeroes(TeamHeroes heroesList) {
+        for (Heroes hero : heroesList.getHeroes()) {
             if (hero.getHP() <= 0) {
                 hero.revive();
                 fightRules.recoverFromBattle(hero);
