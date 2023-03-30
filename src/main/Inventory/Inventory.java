@@ -39,28 +39,38 @@ public class Inventory implements IInventory{
     // -------------------------------------------------------------------------------------------
     // Method to get an item from the inventory
     public Items getItem(String itemName) {
-        Items item = inventory.get(itemName);
-        if (item instanceof Spells) {
-            size--;
-            return (Spells) item;
+        Items selectedItem = null;
+
+        for (Items item : inventory.values()) {
+            switch (itemName.toLowerCase()) {
+                case "potion":
+                    if (item instanceof Potions) {
+                        selectedItem = item;
+                    }
+                    break;
+                case "spell":
+                    if (item instanceof Spells) {
+                        selectedItem = item;
+                    }
+                    break;
+                case "weapon":
+                    if (item instanceof Weapons) {
+                        selectedItem = item;
+                    }
+                    break;
+                case "armor":
+                    if (item instanceof Armors) {
+                        selectedItem = item;
+                    }
+                    break;
+            }
+
+            if (selectedItem != null) {
+                break;
+            }
         }
 
-        if (item instanceof Weapons) {
-            size--;
-            return (Weapons) item;
-        }
-
-        if (item instanceof Potions){
-            size--;
-            return (Potions) item;
-        }
-
-        if (item instanceof Armors) {
-            size--;
-            return (Armors) item;
-        }
-
-        return item;
+        return selectedItem;
     }
 
     public int getPrice(String itemName) {
@@ -78,11 +88,30 @@ public class Inventory implements IInventory{
     }
     // -------------------------------------------------------------------------------------------
     // printing out the inventory
+//    public void printInventory() {
+//        for (String key : inventory.keySet()) {
+//            System.out.println(key);
+////            System.out.println();
+//        }
+//    }
     public void printInventory() {
-        for (String key : inventory.keySet()) {
-            System.out.println(key);
+        for (Items item : inventory.values()) {
+            String itemType = "";
+
+            if (item instanceof Potions) {
+                itemType = "Potion";
+            } else if (item instanceof Spells) {
+                itemType = "Spell";
+            } else if (item instanceof Weapons) {
+                itemType = "Weapon";
+            } else if (item instanceof Armors) {
+                itemType = "Armor";
+            }
+
+            System.out.println(itemType + ": " + item.getName());
         }
     }
+    // -------------------------------------------------------------------------------------------
 
     public boolean contains(Items item) {
         return inventory.containsKey(item.getName());

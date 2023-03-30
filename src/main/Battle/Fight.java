@@ -53,6 +53,7 @@ public class Fight{
             switch (action) {
                 case "potion" -> {
                     // Code to use potion
+                    System.out.println("------------------------------------------------------------");
                     Potions potion = (Potions) hero.getInventory().getItem("Potion");
                     if (potion != null) {
                         fightRules.usePotion(hero, potion);
@@ -63,6 +64,7 @@ public class Fight{
                 }
                 case "spell" -> {
                     // Code to use spell
+                    System.out.println("------------------------------------------------------------");
                     Spells spell = (Spells) hero.getInventory().getItem("Spell");
                     if (spell != null) {
                         fightRules.useSpell(hero, spell, monsters);
@@ -73,6 +75,7 @@ public class Fight{
                 }
                 case "weapon" -> {
                     // Code to use weapon
+                    System.out.println("------------------------------------------------------------");
                     Weapons weapons = (Weapons) hero.getInventory().getItem("Weapon");
                     if (weapons != null) {
                         fightRules.useWeapon(hero, weapons, monsters);
@@ -83,6 +86,7 @@ public class Fight{
                 }
                 case "armor" -> {
                     // Code to use armor
+                    System.out.println("------------------------------------------------------------");
                     Armors armors = (Armors) hero.getInventory().getItem("Armor");
                     if (armors != null) {
                         damageReduction = fightRules.useArmor(hero, armors);
@@ -99,10 +103,13 @@ public class Fight{
                 }
                 case "attack" ->{
                     // Check if the hero dodges
+                    System.out.println("------------------------------------------------------------");
                     if (Math.random() > monsterDodgeChance) {
                         double attackDamage = fightRules.attackDamage(hero);
                         monsters.takeDamage(attackDamage);
                         System.out.println(colorText(hero.getName() + " attacks ", "yellow" ) + colorText( monsters.getName() + " for ", "blue" )+ colorText( attackDamage + " damage.", "red"));
+                    } else {
+                        System.out.println(colorText(monsters.getName() + " dodged the attack!", "blue"));
                     }
 
                     // If the monster's HP is 0 or less, the battle is won
@@ -138,6 +145,8 @@ public class Fight{
 //                        Armors armor = (Armors) hero.getInventory().getItem("Armor");
                         hero.takeDamage(monsterAttackDamage);
                         System.out.println(colorText(monsters.getName() + " attacks ", "blue") + colorText(hero.getName() + " for ", "yellow") + colorText(monsterAttackDamage + " damage.", "red"));
+                    } else {
+                        System.out.println(colorText(hero.getName() + " dodged the attack!", "yellow"));
                     }
 
                     // If the hero's HP is 0 or less, the hero is defeated

@@ -75,6 +75,10 @@ The following packages or folders have been made:
 - Controls.java has the rules to move around in the game
 - FightRules has the rules needed for each fight
 - Colors and storyLine are additional classes that make the code more impactful
+- In every iteration, the program will display if you are in a market or not, the controls and the world. If you enter an inaccesible area,
+you will return to a previous position. 
+- In this game, equiping a weapon DOES NOT take up a turn. The dodge chance is decent enough that the player dodges 1/3 times.
+- The game will reduce the chances of an encounter of the basis of the heros health and if there is a battle, the monster is weaker
 
 ## BONUS implemented
 ---------------------------------------------------------------------------
@@ -3008,4 +3012,1998 @@ Thank you for playing!
 Process finished with exit code 0
 ------------------------------------------------------------------------------------------------------------------------
 
-9. 
+9. Sell an item in the market, fight a battle, use a potion (changes player stats) and then win the fight. 
+There was a case where the hero could not buy an item because they had too less gold.
+   /Users/arkashjain/Library/Java/JavaVirtualMachines/openjdk-19.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=49524:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/arkashjain/Desktop/Spring 2023/CS 611/Monsters_and_Heroes_hw/out/production/Monsters_and_Heroes_hw Main
+   In a mystical world, sorcers, paladins and warrior clans kept fighting amongst themselves for dominance.
+   The world was in imbalance until one day ......They came!
+   These monster - dragons, spirits and exoskeletons - the likes of whom were never seen below came to conquer this world.
+   All hope isn't lost yet because these heroes are the only ones strong enough to stop them.
+----------------------------------------------------------------------------------------
+You have been chosen to protect this planet from this evil doers. You are to pick a team of 3, should you choose to accept,
+to go on a quest to fight these monsters. The all knowing oracle will be floating around the world with you as the symbol i, standing for intelligence,
+Intransigence and intrepid.
+Before you were dragged into this war, clan merchants and citizens collected ancient items like armors, potions
+and spells to help you in your quest. As you go through the world, you will find your kin in markets where you can buy those materials
+to beat those monsters
+NOW GO AHEAD AND RECLAIM THIS WORLD
+----------------------------------------------------------------------------------------
+Welcome to the Monsters and Heroes game!
+Enter the size of the world (e.g., 8 for an 8x8 world):
+8
++---+---+---+---+---+---+---+---+
+| x | x | x |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+|   | x | M |   | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | x |   | M |   |   |
++---+---+---+---+---+---+---+---+
+|   |   | M | M | M |   |   |   |
++---+---+---+---+---+---+---+---+
+| M | x | M |   |   |   | M | M |
++---+---+---+---+---+---+---+---+
+| x |   |   | M | M | x | x | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | x |   | x |   |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M | x |   | M |   |
++---+---+---+---+---+---+---+---+
+Do you want to change the world (y/n)?
+n
+Here's a list of heroes you can choose from. Select your team of heroes (maximum 3 heroes):
+Paladins:
+The stats for this player are as follows:
+Name: Parzival  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 650.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 700.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Skoraeus_Stonebones  |  Level: 4  |  HP: 400.000  |  MP: 250.000  |  Dexterity: 350.000  |  Agility: 600.000  |  Strength: 650.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Garl_Glittergold  |  Level: 5  |  HP: 500.000  |  MP: 100.000  |  Dexterity: 400.000  |  Agility: 500.000  |  Strength: 600.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Amaryllis_Astra  |  Level: 5  |  HP: 500.000  |  MP: 500.000  |  Dexterity: 500.000  |  Agility: 500.000  |  Strength: 500.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Caliber_Heist  |  Level: 8  |  HP: 800.000  |  MP: 400.000  |  Dexterity: 400.000  |  Agility: 400.000  |  Strength: 400.000  |  Gold: 2500  |  
+The inventory currently is:
+----------------------------------------
+Sorcerers:
+The stats for this player are as follows:
+Name: Rillifane_Rallathil  |  Level: 9  |  HP: 900.000  |  MP: 1,300.000  |  Dexterity: 500.000  |  Agility: 450.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Segojan_Earthcaller  |  Level: 5  |  HP: 500.000  |  MP: 900.000  |  Dexterity: 650.000  |  Agility: 500.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Reign_Havoc  |  Level: 8  |  HP: 800.000  |  MP: 800.000  |  Dexterity: 800.000  |  Agility: 800.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Reverie_Ashels  |  Level: 7  |  HP: 700.000  |  MP: 900.000  |  Dexterity: 400.000  |  Agility: 700.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Kalabar  |  Level: 6  |  HP: 600.000  |  MP: 800.000  |  Dexterity: 600.000  |  Agility: 400.000  |  Strength: 850.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Skye_Soar  |  Level: 5  |  HP: 500.000  |  MP: 1,000.000  |  Dexterity: 500.000  |  Agility: 400.000  |  Strength: 700.000  |  Gold: 2500  |  
+The inventory currently is:
+----------------------------------------
+Warriors:
+The stats for this player are as follows:
+Name: Gaerdal_Ironhand  |  Level: 7  |  HP: 700.000  |  MP: 100.000  |  Dexterity: 600.000  |  Agility: 500.000  |  Strength: 700.000  |  Gold: 1354  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Sehanine_Monnbow  |  Level: 8  |  HP: 800.000  |  MP: 600.000  |  Dexterity: 500.000  |  Agility: 800.000  |  Strength: 700.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Muamman_Duathall  |  Level: 6  |  HP: 600.000  |  MP: 300.000  |  Dexterity: 750.000  |  Agility: 500.000  |  Strength: 900.000  |  Gold: 2546  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Flandal_Steelskin  |  Level: 7  |  HP: 700.000  |  MP: 200.000  |  Dexterity: 700.000  |  Agility: 650.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 7  |  HP: 700.000  |  MP: 400.000  |  Dexterity: 700.000  |  Agility: 400.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Eunoia_Cyn  |  Level: 6  |  HP: 600.000  |  MP: 400.000  |  Dexterity: 600.000  |  Agility: 800.000  |  Strength: 700.000  |  Gold: 2500  |  
+The inventory currently is:
+----------------------------------------
+Enter you team name:
+KashIN
+Enter you team size (cannot be greater than 3):
+2
+Enter the x position you want to start from:
+0
+Enter the y position you want to start from:
+0
+The position you entered is not accessible, please enter again
+Enter the x position you want to start from:
+0
+Enter the y position you want to start from:
+3
+Enter the name of the hero you want to select:
+Sehanine_Moonbow
+Enter the name of the hero you want to select:
+Undefeated_Yoj
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | x | x |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+|   | x | M |   | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | x |   | M |   |   |
++---+---+---+---+---+---+---+---+
+|   |   | M | M | M |   |   |   |
++---+---+---+---+---+---+---+---+
+| M | x | M |   |   |   | M | M |
++---+---+---+---+---+---+---+---+
+| x |   |   | M | M | x | x | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | x |   | x |   |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M | x |   | M |   |
++---+---+---+---+---+---+---+---+
+Team position: 0, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 0, 4
+A battle begins!
+Battle between Sehanine_Moonbow and DocOck
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 700.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this monster are as follows:
+Name: DocOck  |  Level: 6  |  HP: 600.000  |  Base-Damage: 600.000  |  Defence-Value: 600.000  |  Dodge-Agility: 55.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+attack
+Battle between Sehanine_Moonbow and DocOck
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 700.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this monster are as follows:
+Name: DocOck  |  Level: 6  |  HP: 600.000  |  Base-Damage: 600.000  |  Defence-Value: 600.000  |  Dodge-Agility: 55.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+attack
+Sehanine_Moonbow attacks DocOck for 750.0 damage.
+Sehanine_Moonbow has defeated DocOck!
+Battle between Sehanine_Moonbow and Rakkshasass
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 700.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this monster are as follows:
+Name: Rakkshasass  |  Level: 6  |  HP: 900.000  |  Base-Damage: 550.000  |  Defence-Value: 600.000  |  Dodge-Agility: 35.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+attack
+Battle between Sehanine_Moonbow and Rakkshasass
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 700.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this monster are as follows:
+Name: Rakkshasass  |  Level: 6  |  HP: 900.000  |  Base-Damage: 550.000  |  Defence-Value: 600.000  |  Dodge-Agility: 35.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+attack
+Sehanine_Moonbow attacks Rakkshasass for 750.0 damage.
+Battle between Sehanine_Moonbow and Rakkshasass
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 700.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this monster are as follows:
+Name: Rakkshasass  |  Level: 6  |  HP: 210.000  |  Base-Damage: 550.000  |  Defence-Value: 600.000  |  Dodge-Agility: 35.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+attack
+Sehanine_Moonbow attacks Rakkshasass for 750.0 damage.
+Sehanine_Moonbow has defeated Rakkshasass!
+All monsters have been defeated!
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 735.000  |  Agility: 735.000  |  Strength: 787.500  |  Gold: 3100  |  
+The inventory currently is:
+You have gotten a skills upgrade!
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 8  |  HP: 770.000  |  MP: 330.000  |  Dexterity: 735.000  |  Agility: 735.000  |  Strength: 787.500  |  Gold: 3100  |  
+The inventory currently is:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | x | x |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+|   | x | M |   | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | x |   | M |   |   |
++---+---+---+---+---+---+---+---+
+|   |   | M | M | M |   |   |   |
++---+---+---+---+---+---+---+---+
+| M | x | M |   |   |   | M | M |
++---+---+---+---+---+---+---+---+
+| x |   |   | M | M | x | x | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | x |   | x |   |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M | x |   | M |   |
++---+---+---+---+---+---+---+---+
+Team position: 0, 4
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 1, 4
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | x | x |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+|   | x | M |   | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | x |   | M |   |   |
++---+---+---+---+---+---+---+---+
+|   |   | M | M | M |   |   |   |
++---+---+---+---+---+---+---+---+
+| M | x | M |   |   |   | M | M |
++---+---+---+---+---+---+---+---+
+| x |   |   | M | M | x | x | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | x |   | x |   |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M | x |   | M |   |
++---+---+---+---+---+---+---+---+
+Team position: 1, 4
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+m
+Moving team to position: 1, 4
+You entered the market:
+Entering the market...
+Welcome to the market
+You can buy or sell items here
+
+
+-------------------------------------- BUY/SELL/EXIT -----------------------------------------------
+To buy items, enter 'buy' | To sell items, enter 'sell' | To exit the market, enter 'exit'
+buy
+Select Hero:
+Heroes:
+Sehanine_Moonbow
+Undefeated_Yoj
+Undefeated_Yoj
+You chose:
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 7  |  HP: 700.000  |  MP: 400.000  |  Dexterity: 700.000  |  Agility: 400.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+
+
+----------------------------------- BUY ITEMS ----------------------------------------------------
+These are the items for sale
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+Enter the name of the item you want to buy
+Spark_Needles
+You bought Spark_Needles for 500 gold
+Want to buy another item? Enter 'buy' | Want to sell something? Enter 'sell' |To exit the market, enter 'exit'
+TSwords
+Please enter a valid input
+TSwords
+Please enter a valid input
+buy
+Select Hero:
+Heroes:
+Sehanine_Moonbow
+Undefeated_Yoj
+Undefeated_Yoj
+You chose:
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 7  |  HP: 700.000  |  MP: 400.000  |  Dexterity: 700.000  |  Agility: 400.000  |  Strength: 800.000  |  Gold: 2000  |  
+The inventory currently is:
+Spark_Needles
+
+
+----------------------------------- BUY ITEMS ----------------------------------------------------
+These are the items for sale
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+Enter the name of the item you want to buy
+TSwords
+You do not have enough gold or level to buy this item.
+Want to buy another item? Enter 'buy' | Want to sell something? Enter 'sell' |To exit the market, enter 'exit'
+buy
+Select Hero:
+Heroes:
+Sehanine_Moonbow
+Undefeated_Yoj
+Sehanine_Moonbow
+You chose:
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 8  |  HP: 770.000  |  MP: 330.000  |  Dexterity: 735.000  |  Agility: 735.000  |  Strength: 787.500  |  Gold: 3100  |  
+The inventory currently is:
+
+
+----------------------------------- BUY ITEMS ----------------------------------------------------
+These are the items for sale
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+Enter the name of the item you want to buy
+Mermaid_Tears
+You bought Mermaid_Tears for 850 gold
+Want to buy another item? Enter 'buy' | Want to sell something? Enter 'sell' |To exit the market, enter 'exit'
+sell
+Select Hero:
+Heroes:
+Sehanine_Moonbow
+Undefeated_Yoj
+Undefeated_Yoj
+You chose:
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 7  |  HP: 700.000  |  MP: 400.000  |  Dexterity: 700.000  |  Agility: 400.000  |  Strength: 800.000  |  Gold: 2000  |  
+The inventory currently is:
+Spark_Needles
+
+
+These are the items that are sold out
+| Spark_Needles | 500 gold | 2 level
+| Mermaid_Tears | 850 gold | 5 level
+Enter the name of the item you want to sell
+Spark_Needles
+$$$Cha-Ching:You sold Spark_Needles for 250 gold
+Your inventory is:
+Want to sell another item? Enter 'sell'| Want to buy? Enter 'buy' | To exit the market, enter 'exit'
+exit
+Exiting the Market!!!
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | x | x |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+|   | x | M |   | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | x |   | M |   |   |
++---+---+---+---+---+---+---+---+
+|   |   | M | M | M |   |   |   |
++---+---+---+---+---+---+---+---+
+| M | x | M |   |   |   | M | M |
++---+---+---+---+---+---+---+---+
+| x |   |   | M | M | x | x | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | x |   | x |   |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M | x |   | M |   |
++---+---+---+---+---+---+---+---+
+Team position: 1, 4
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 1, 5
+A battle begins!
+Battle between Sehanine_Moonbow and Blinky
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 8  |  HP: 770.000  |  MP: 330.000  |  Dexterity: 735.000  |  Agility: 735.000  |  Strength: 787.500  |  Gold: 2250  |  
+The inventory currently is:
+Mermaid_Tears
+The stats for this monster are as follows:
+Name: Blinky  |  Level: 7  |  HP: 100.000  |  Base-Damage: 450.000  |  Defence-Value: 350.000  |  Dodge-Agility: 35.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+potion
+Battle between Sehanine_Moonbow and Blinky
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 8  |  HP: 870.000  |  MP: 430.000  |  Dexterity: 735.000  |  Agility: 835.000  |  Strength: 887.500  |  Gold: 2250  |  
+The inventory currently is:
+Mermaid_Tears
+The stats for this monster are as follows:
+Name: Blinky  |  Level: 7  |  HP: 100.000  |  Base-Damage: 450.000  |  Defence-Value: 350.000  |  Dodge-Agility: 35.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+attack
+Battle between Sehanine_Moonbow and Blinky
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 8  |  HP: 870.000  |  MP: 430.000  |  Dexterity: 735.000  |  Agility: 835.000  |  Strength: 887.500  |  Gold: 2250  |  
+The inventory currently is:
+Mermaid_Tears
+The stats for this monster are as follows:
+Name: Blinky  |  Level: 7  |  HP: 100.000  |  Base-Damage: 450.000  |  Defence-Value: 350.000  |  Dodge-Agility: 35.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+attack
+Sehanine_Moonbow attacks Blinky for 887.5 damage.
+Sehanine_Moonbow has defeated Blinky!
+Battle between Sehanine_Moonbow and Chrysophylax
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 8  |  HP: 870.000  |  MP: 430.000  |  Dexterity: 735.000  |  Agility: 835.000  |  Strength: 887.500  |  Gold: 2250  |  
+The inventory currently is:
+Mermaid_Tears
+The stats for this monster are as follows:
+Name: Chrysophylax  |  Level: 7  |  HP: 200.000  |  Base-Damage: 200.000  |  Defence-Value: 500.000  |  Dodge-Agility: 20.000  |  
+Enter action for Sehanine_Moonbow: (potion/spell/weapon/armor/information/attack)
+attack
+Sehanine_Moonbow attacks Chrysophylax for 887.5 damage.
+Sehanine_Moonbow has defeated Chrysophylax!
+All monsters have been defeated!
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 8  |  HP: 870.000  |  MP: 430.000  |  Dexterity: 771.750  |  Agility: 876.750  |  Strength: 931.875  |  Gold: 2950  |  
+The inventory currently is:
+Mermaid_Tears
+You have gotten a skills upgrade!
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 9  |  HP: 957.000  |  MP: 473.000  |  Dexterity: 771.750  |  Agility: 876.750  |  Strength: 931.875  |  Gold: 2950  |  
+The inventory currently is:
+Mermaid_Tears
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | x | x |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+|   | x | M |   | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | x |   | M |   |   |
++---+---+---+---+---+---+---+---+
+|   |   | M | M | M |   |   |   |
++---+---+---+---+---+---+---+---+
+| M | x | M |   |   |   | M | M |
++---+---+---+---+---+---+---+---+
+| x |   |   | M | M | x | x | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | x |   | x |   |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M | x |   | M |   |
++---+---+---+---+---+---+---+---+
+Team position: 1, 5
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+q
+Quitting the game...
+You have defeated the monsters and saved the world. You are now a legend. You are now a hero. You are now a champion
+Thank you for playing!
+
+Process finished with exit code 0
+-------------------------------------------------------------------------------------------------------------------------------------
+
+10. Moving around, using a weapon and final testing
+    /Users/arkashjain/Library/Java/JavaVirtualMachines/openjdk-19.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=49545:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/arkashjain/Desktop/Spring 2023/CS 611/Monsters_and_Heroes_hw/out/production/Monsters_and_Heroes_hw Main
+    In a mystical world, sorcers, paladins and warrior clans kept fighting amongst themselves for dominance.
+    The world was in imbalance until one day ......They came!
+    These monster - dragons, spirits and exoskeletons - the likes of whom were never seen below came to conquer this world.
+    All hope isn't lost yet because these heroes are the only ones strong enough to stop them.
+----------------------------------------------------------------------------------------
+You have been chosen to protect this planet from this evil doers. You are to pick a team of 3, should you choose to accept,
+to go on a quest to fight these monsters. The all knowing oracle will be floating around the world with you as the symbol i, standing for intelligence,
+Intransigence and intrepid.
+Before you were dragged into this war, clan merchants and citizens collected ancient items like armors, potions
+and spells to help you in your quest. As you go through the world, you will find your kin in markets where you can buy those materials
+to beat those monsters
+NOW GO AHEAD AND RECLAIM THIS WORLD
+----------------------------------------------------------------------------------------
+Welcome to the Monsters and Heroes game!
+Enter the size of the world (e.g., 8 for an 8x8 world):
+8
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Do you want to change the world (y/n)?
+n
+Here's a list of heroes you can choose from. Select your team of heroes (maximum 3 heroes):
+Paladins:
+The stats for this player are as follows:
+Name: Parzival  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 650.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Sehanine_Moonbow  |  Level: 7  |  HP: 700.000  |  MP: 300.000  |  Dexterity: 700.000  |  Agility: 700.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Skoraeus_Stonebones  |  Level: 4  |  HP: 400.000  |  MP: 250.000  |  Dexterity: 350.000  |  Agility: 600.000  |  Strength: 650.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Garl_Glittergold  |  Level: 5  |  HP: 500.000  |  MP: 100.000  |  Dexterity: 400.000  |  Agility: 500.000  |  Strength: 600.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Amaryllis_Astra  |  Level: 5  |  HP: 500.000  |  MP: 500.000  |  Dexterity: 500.000  |  Agility: 500.000  |  Strength: 500.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Caliber_Heist  |  Level: 8  |  HP: 800.000  |  MP: 400.000  |  Dexterity: 400.000  |  Agility: 400.000  |  Strength: 400.000  |  Gold: 2500  |  
+The inventory currently is:
+----------------------------------------
+Sorcerers:
+The stats for this player are as follows:
+Name: Rillifane_Rallathil  |  Level: 9  |  HP: 900.000  |  MP: 1,300.000  |  Dexterity: 500.000  |  Agility: 450.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Segojan_Earthcaller  |  Level: 5  |  HP: 500.000  |  MP: 900.000  |  Dexterity: 650.000  |  Agility: 500.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Reign_Havoc  |  Level: 8  |  HP: 800.000  |  MP: 800.000  |  Dexterity: 800.000  |  Agility: 800.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Reverie_Ashels  |  Level: 7  |  HP: 700.000  |  MP: 900.000  |  Dexterity: 400.000  |  Agility: 700.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Kalabar  |  Level: 6  |  HP: 600.000  |  MP: 800.000  |  Dexterity: 600.000  |  Agility: 400.000  |  Strength: 850.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Skye_Soar  |  Level: 5  |  HP: 500.000  |  MP: 1,000.000  |  Dexterity: 500.000  |  Agility: 400.000  |  Strength: 700.000  |  Gold: 2500  |  
+The inventory currently is:
+----------------------------------------
+Warriors:
+The stats for this player are as follows:
+Name: Gaerdal_Ironhand  |  Level: 7  |  HP: 700.000  |  MP: 100.000  |  Dexterity: 600.000  |  Agility: 500.000  |  Strength: 700.000  |  Gold: 1354  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Sehanine_Monnbow  |  Level: 8  |  HP: 800.000  |  MP: 600.000  |  Dexterity: 500.000  |  Agility: 800.000  |  Strength: 700.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Muamman_Duathall  |  Level: 6  |  HP: 600.000  |  MP: 300.000  |  Dexterity: 750.000  |  Agility: 500.000  |  Strength: 900.000  |  Gold: 2546  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Flandal_Steelskin  |  Level: 7  |  HP: 700.000  |  MP: 200.000  |  Dexterity: 700.000  |  Agility: 650.000  |  Strength: 750.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 7  |  HP: 700.000  |  MP: 400.000  |  Dexterity: 700.000  |  Agility: 400.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this player are as follows:
+Name: Eunoia_Cyn  |  Level: 6  |  HP: 600.000  |  MP: 400.000  |  Dexterity: 600.000  |  Agility: 800.000  |  Strength: 700.000  |  Gold: 2500  |  
+The inventory currently is:
+----------------------------------------
+Enter you team name:
+kashIN
+Enter you team size (cannot be greater than 3):
+1
+Enter the x position you want to start from:
+0
+Enter the y position you want to start from:
+0
+The position you entered is not accessible, please enter again
+Enter the x position you want to start from:
+1
+Enter the y position you want to start from:
+1
+Enter the name of the hero you want to select:
+Undefeated_Yoj
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 1, 1
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 1, 2
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 1, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 1, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 1, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 2, 3
+No battle this time.
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 2, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 2, 4
+You can't go here
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 3, 4
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 4
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 4, 4
+You can't go here
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 4, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 4, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 5, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 5, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 6, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 6, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+a
+Moving team to position: 6, 2
+A battle begins!
+Battle between Undefeated_Yoj and Casper
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 7  |  HP: 700.000  |  MP: 400.000  |  Dexterity: 700.000  |  Agility: 400.000  |  Strength: 800.000  |  Gold: 2500  |  
+The inventory currently is:
+The stats for this monster are as follows:
+Name: Casper  |  Level: 6  |  HP: 100.000  |  Base-Damage: 100.000  |  Defence-Value: 100.000  |  Dodge-Agility: 50.000  |  
+Enter action for Undefeated_Yoj: (potion/spell/weapon/armor/information/attack)
+attack
+------------------------------------------------------------
+Undefeated_Yoj attacks Casper for 800.0 damage.
+Undefeated_Yoj has defeated Casper!
+All monsters have been defeated!
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 7  |  HP: 700.000  |  MP: 400.000  |  Dexterity: 735.000  |  Agility: 420.000  |  Strength: 840.000  |  Gold: 3100  |  
+The inventory currently is:
+You have gotten a skills upgrade!
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 8  |  HP: 770.000  |  MP: 440.000  |  Dexterity: 735.000  |  Agility: 420.000  |  Strength: 840.000  |  Gold: 3100  |  
+The inventory currently is:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 6, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+w
+Moving team to position: 5, 2
+No battle this time.
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 5, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+w
+Moving team to position: 4, 2
+No battle this time.
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 4, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+w
+Moving team to position: 3, 2
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+m
+Moving team to position: 3, 2
+You entered the market:
+Entering the market...
+Welcome to the market
+You can buy or sell items here
+
+
+-------------------------------------- BUY/SELL/EXIT -----------------------------------------------
+To buy items, enter 'buy' | To sell items, enter 'sell' | To exit the market, enter 'exit'
+buy
+Select Hero:
+Heroes:
+Undefeated_Yoj
+Undefeated_Yoj
+You chose:
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 8  |  HP: 770.000  |  MP: 440.000  |  Dexterity: 735.000  |  Agility: 420.000  |  Strength: 840.000  |  Gold: 3100  |  
+The inventory currently is:
+
+
+----------------------------------- BUY ITEMS ----------------------------------------------------
+These are the items for sale
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+| Platinum_Shield | 150 gold | 1 level
+| Breastplate | 350 gold | 3 level
+| Full_Body_Armor | 1000 gold | 8 level
+| Wizard_Shield | 1200 gold | 10 level
+| Guardian_Angel | 1000 gold | 10 level
+| Healing_Potion | 250 gold | 1 level
+| Strength_Potion | 200 gold | 1 level
+| Magic_Potion | 350 gold | 2 level
+| Luck_Elixir | 500 gold | 4 level
+| Mermaid_Tears | 850 gold | 5 level
+| Ambrosia | 1000 gold | 8 level
+| Sword | 500 gold | 1 level
+| Bow | 300 gold | 2 level
+| Scythe | 1000 gold | 6 level
+| Axe | 550 gold | 5 level
+| TSwords | 1400 gold | 8 level
+| Dagger | 200 gold | 1 level
+| Flame_Tornado | 700 gold | 4 level
+| Breath_of_Fire | 350 gold | 1 level
+| Heat_Wave | 450 gold | 2 level
+| Lava_Comet | 800 gold | 7 level
+| Hell_Storm | 600 gold | 3 level
+| Snow_Cannon | 500 gold | 2 level
+| Ice_Blade | 250 gold | 1 level
+| Frost_Blizzard | 750 gold | 5 level
+| Arctic_Storm | 700 gold | 6 level
+| Lightning_Dagger | 400 gold | 1 level
+| Thunder_Blast | 750 gold | 4 level
+| Electric_Arrows | 550 gold | 5 level
+| Spark_Needles | 500 gold | 2 level
+Enter the name of the item you want to buy
+Axe
+You bought Axe for 550 gold
+Want to buy another item? Enter 'buy' | Want to sell something? Enter 'sell' |To exit the market, enter 'exit'
+exit
+Exiting the Market!!!
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 3, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 3, 4
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 4
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 4, 4
+You can't go here
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 4, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 4, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 5, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 5, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 6, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 6, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+a
+Moving team to position: 6, 2
+No battle this time.
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 6, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+a
+Moving team to position: 6, 1
+No battle this time.
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 6, 1
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 7, 1
+You can't go here
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 0, 0
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 0, 1
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 0, 1
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+dd
+Moving team to position: 0, 2
+No battle this time.
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 0, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 0, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 0, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+d
+Moving team to position: 0, 4
+You can't go here
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 3, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 4, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 4, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 5, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 5, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+s
+Moving team to position: 6, 3
+You entered the market:
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 6, 3
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+a
+Moving team to position: 6, 2
+No battle this time.
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 6, 2
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+a
+Moving team to position: 6, 1
+No battle this time.
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 6, 1
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+w
+Moving team to position: 5, 1
+A battle begins!
+Battle between Undefeated_Yoj and BigBad-Wolf
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 8  |  HP: 770.000  |  MP: 440.000  |  Dexterity: 735.000  |  Agility: 420.000  |  Strength: 840.000  |  Gold: 2550  |  
+The inventory currently is:
+Weapon: Axe
+The stats for this monster are as follows:
+Name: BigBad-Wolf  |  Level: 7  |  HP: 100.000  |  Base-Damage: 150.000  |  Defence-Value: 250.000  |  Dodge-Agility: 15.000  |  
+Enter action for Undefeated_Yoj: (potion/spell/weapon/armor/information/attack)
+weapon
+------------------------------------------------------------
+Battle between Undefeated_Yoj and BigBad-Wolf
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 8  |  HP: 770.000  |  MP: 440.000  |  Dexterity: 735.000  |  Agility: 420.000  |  Strength: 840.000  |  Gold: 2550  |  
+The inventory currently is:
+Weapon: Axe
+The stats for this monster are as follows:
+Name: BigBad-Wolf  |  Level: 7  |  HP: 0.000  |  Base-Damage: 150.000  |  Defence-Value: 250.000  |  Dodge-Agility: 15.000  |  
+Enter action for Undefeated_Yoj: (potion/spell/weapon/armor/information/attack)
+attack
+------------------------------------------------------------
+Undefeated_Yoj attacks BigBad-Wolf for 84.5 damage.
+Undefeated_Yoj has defeated BigBad-Wolf!
+All monsters have been defeated!
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 8  |  HP: 770.000  |  MP: 440.000  |  Dexterity: 771.750  |  Agility: 441.000  |  Strength: 882.000  |  Gold: 3250  |  
+The inventory currently is:
+Weapon: Axe
+You have gotten a skills upgrade!
+The stats for this player are as follows:
+Name: Undefeated_Yoj  |  Level: 9  |  HP: 847.000  |  MP: 484.000  |  Dexterity: 771.750  |  Agility: 441.000  |  Strength: 882.000  |  Gold: 3250  |  
+The inventory currently is:
+Weapon: Axe
+W | w - Move up
+S | s - Move down
+D | d - Move right
+A | a - Move left
+Q | q - Quit the game
+I | i - Display information about the heroes
+M | m - Enter the market
++---+---+---+---+---+---+---+---+
+| x | M |   | M | x |   | x |   |
++---+---+---+---+---+---+---+---+
+| M |   | M | M |   | x |   | x |
++---+---+---+---+---+---+---+---+
+|   | x |   |   | x |   |   | x |
++---+---+---+---+---+---+---+---+
+| M | M | M | M | M |   | M |   |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | x |   |   | M |
++---+---+---+---+---+---+---+---+
+|   |   |   | M | M |   |   | M |
++---+---+---+---+---+---+---+---+
+| M |   |   | M |   |   |   |   |
++---+---+---+---+---+---+---+---+
+| x | x |   |   | x | M |   |   |
++---+---+---+---+---+---+---+---+
+Team position: 5, 1
+Enter your command (WASD for movement, Q to quit, I for info, M to enter market):
+q
+Quitting the game...
+You have defeated the monsters and saved the world. You are now a legend. You are now a hero. You are now a champion
+Thank you for playing!
+
+Process finished with exit code 0
