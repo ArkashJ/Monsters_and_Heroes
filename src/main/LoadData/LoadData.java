@@ -26,9 +26,9 @@ public class LoadData {
 
     public LoadData() {
         SpellFileReader spellFileReader = new SpellFileReader();
-        fireSpells = spellFileReader.loadFromFile("src/Instructions/FireSpells.txt");
-        iceSpells = spellFileReader.loadFromFile("src/Instructions/IceSpells.txt");
-        lightningSpells = spellFileReader.loadFromFile("src/Instructions/LightningSpells.txt");
+        fireSpells = spellFileReader.loadFromFile("/Instructions/FireSpells.txt");
+        iceSpells = spellFileReader.loadFromFile("/Instructions/IceSpells.txt");
+        lightningSpells = spellFileReader.loadFromFile("/Instructions/LightningSpells.txt");
         // --------------------------------------------------------------------------------------------------
         ArmorFileReader armorFileReader = new ArmorFileReader();
         armors = armorFileReader.loadFromFile("src/Instructions/Armory.txt");
