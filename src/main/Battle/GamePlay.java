@@ -181,6 +181,7 @@ public class GamePlay {
         while (true) {
             control.printControlInfo();
             world.printWorld();
+            teamHeroes.printPosition();
             System.out.println("Enter your command (WASD for movement, Q to quit, I for info, M to enter market): ");
             input = scanner.next().charAt(0);
             // ------------------------- QUIT THE GAME -------------------------
