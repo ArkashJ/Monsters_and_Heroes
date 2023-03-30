@@ -38,15 +38,6 @@ public class PotionFileReader implements Loadable<Potions> {
         return potionsList;
     }
 
-//    public static void main(String[] args) {
-//        PotionFileReader potionFileReader = new PotionFileReader();
-//        List<Potions> potions = potionFileReader.loadFromFile("src/Instructions/Potions.txt");
-//
-//        for (Potions potion : potions) {
-//            potion.printStats();
-//        }
-//        System.out.println("--------------------");
-//
-//    }
+
 
 }

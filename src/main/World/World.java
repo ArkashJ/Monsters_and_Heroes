@@ -1,8 +1,7 @@
 package main.World;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
-import main.World.IWorld;
+
 import main.Characters.Heroes.Heroes;
 import main.Teams.TeamHeroes;
 import main.World.Cell.Cell;
@@ -15,8 +14,6 @@ The world of the game is represented by a fixed, square grid of spaces. The grid
  Every time the heroes visit a space, we "roll a die," and, if they are unlucky, then the monsters are created and the battle begins immediately.
  An example world size is 8 spaces by 8 spaces. In this size our suggestion is to have 20% inaccessible spaces, 30% market spaces, and 50% common spaces.
  */
-
-import main.Colors.colors;
 
 import static main.Colors.colors.colorText;
 
@@ -33,6 +30,10 @@ public class World implements IWorld{
 
     public Cell[][] getWorld() {
         return world;
+    }
+
+    public Cell getCell(int x, int y){
+        return world[x][y];
     }
 
     public void setWorld(Cell[][] world) {
@@ -139,11 +140,10 @@ public class World implements IWorld{
         enterCell(x, y); // Call the enterCell method of the World class with the new position
     }
 
-
-    public static void main(String[] args){
-        World world = new World(8);
-        world.printWorld();
-    }
+//    public static void main(String[] args){
+//        World world = new World(8);
+//        world.printWorld();
+//    }
 
     public void printWorldInfo(){
         System.out.println("World size: " + size);

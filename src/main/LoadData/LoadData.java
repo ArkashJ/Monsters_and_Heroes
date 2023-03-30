@@ -47,7 +47,7 @@ public class LoadData {
         Potions = potionFileReader.loadFromFile("src/Instructions/Potions.txt");
         // --------------------------------------------------------------------------------------------------
         WeaponFileReader weaponFileReader = new WeaponFileReader();
-        weapons = weaponFileReader.loadFromFile("src/Instructions/Weapons.txt");
+        weapons = weaponFileReader.loadFromFile("src/Instructions/Weaponry.txt");
     }
 
     public List<Spells> getFireSpells() {

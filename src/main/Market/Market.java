@@ -9,6 +9,7 @@ import main.LoadData.LoadData;
 import main.Teams.TeamHeroes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -49,23 +50,26 @@ public class Market implements IMarket{
         return itemsForSale;
     }
     // --------------------------------------------------------------------------------------------------
-    public void buyItem(Heroes hero, Items item){
+    public void buyItem(Heroes hero, Items item) {
         // buyItems from the market and store them in the inventory
         int gold = hero.getGold();
         int level = hero.getLevel();
         int price = item.getPrice();
 
         // To implement: Add item to the hero's inventory
-        if (gold >= price && level >= item.getLevel()){
-            itemsForSale.remove(item);
-            soldOutItems.add(item);
-            hero.setGold(gold - price);
-            hero.getInventory().addItem(item);
-            System.out.println("You bought " + item.getName() + " for " + price + " gold");
-        } else if (gold < price){
-            System.out.println(colorText("You don't have enough gold to buy this item", "red"));
-        } else if (level < item.getLevel()){
-            System.out.println(colorText("You don't have enough level to buy this item", "red"));
+        if (gold >= price && level >= item.getLevel()) {
+            Iterator<Items> iterator = itemsForSale.iterator();
+            while (iterator.hasNext()) {
+                Items currentItem = iterator.next();
+                if (currentItem.equals(item)) {
+                    iterator.remove();
+                    soldOutItems.add(item);
+                    hero.setGold(gold - price);
+                    hero.getInventory().addItem(item);
+                    System.out.println("You bought " + item.getName() + " for " + price + " gold");
+                    break;
+                }
+            }
         }
     }
     // --------------------------------------------------------------------------------------------------
@@ -73,13 +77,20 @@ public class Market implements IMarket{
         // sellItems from the inventory and store them in the market
         // To implement: Remove item from the hero's inventory
         int price = item.getPrice();
-        hero.setGold(hero.getGold() + price/2);
-        hero.getInventory().removeItem(item.getName());
-        itemsForSale.add(item);
-        System.out.println(colorText("$$$Cha-Ching:You sold " + item.getName() + " for " + price/2 + " gold", "yellow"));
-        System.out.println("Your inventory is: " );
-        hero.getInventory().printInventory();
+
+        // Check if the item is in the hero's inventory
+        if (hero.getInventory().contains(item)) {
+            hero.setGold(hero.getGold() + price/2);
+            hero.getInventory().removeItem(item.getName());
+            itemsForSale.add(item);
+            System.out.println(colorText("$$$Cha-Ching:You sold " + item.getName() + " for " + price/2 + " gold", "yellow"));
+            System.out.println("Your inventory is: " );
+            hero.getInventory().printInventory();
+        } else {
+            System.out.println(colorText("This item is not in your inventory, so you cannot sell it.", "red"));
+        }
     }
+
     // --------------------------------------------------------------------------------------------------
     public void showItems(){
         // show the items that are available for sale

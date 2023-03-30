@@ -43,27 +43,4 @@ public class HeroFileReader implements Loadable<Heroes> {
         return heroesList;
     }
 
-//    public static void main(String[] args) {
-//        HeroFileReader heroFileReader = new HeroFileReader();
-//        List<Heroes> Paladins = heroFileReader.loadFromFile("src/Instructions/Paladins.txt");
-//        List<Heroes> Sorcerers = heroFileReader.loadFromFile("src/Instructions/Sorcerers.txt");
-//        List<Heroes> Warriors = heroFileReader.loadFromFile("src/Instructions/Warriors.txt");
-//
-//        for (Heroes hero : Paladins) {
-//            hero.printStats();
-//        }
-//        System.out.println("--------------------");
-//
-//        for (Heroes hero : Sorcerers) {
-//            hero.printStats();
-//        }
-//        System.out.println("--------------------");
-//
-//        for (Heroes hero : Warriors) {
-//            hero.printStats();
-//        }
-//        System.out.println("--------------------");
-//
-//    }
-
 }

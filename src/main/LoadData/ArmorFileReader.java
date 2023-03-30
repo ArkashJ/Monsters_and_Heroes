@@ -38,13 +38,4 @@ public class ArmorFileReader implements Loadable<Armors> {
         return armorsList;
     }
 
-//    public static void main(String[] args) {
-//        ArmorFileReader armorFileReader = new ArmorFileReader();
-//        List<Armors> armors = armorFileReader.loadFromFile("src/Instructions/Armory.txt");
-//        for (Armors armor : armors) {
-//            armor.printStats();
-//        }
-//        System.out.println("--------------------");
-//    }
-
 }

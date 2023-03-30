@@ -38,27 +38,4 @@ public class MonsterFileReader implements Loadable<Monsters> {
         return monstersList;
     }
 
-//    public static void main(String[] args) {
-//        MonsterFileReader MonsterFileReader = new MonsterFileReader();
-//        List<Monsters> Exoskeletons = MonsterFileReader.loadFromFile("src/Instructions/Exoskeletons.txt");
-//        List<Monsters> Spirits = MonsterFileReader.loadFromFile("src/Instructions/Spirits.txt");
-//        List<Monsters> Dragons = MonsterFileReader.loadFromFile("src/Instructions/Dragons.txt");
-//
-//        for (Monsters monster : Exoskeletons) {
-//            monster.printStats();
-//        }
-//        System.out.println("--------------------");
-//
-//        for (Monsters monster : Spirits) {
-//            monster.printStats();
-//        }
-//        System.out.println("--------------------");
-//
-//        for (Monsters monster : Dragons) {
-//            monster.printStats();
-//        }
-//        System.out.println("--------------------");
-//
-//    }
-
 }

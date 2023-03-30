@@ -40,15 +40,4 @@ public class WeaponFileReader implements Loadable<Weapons> {
         return weaponsList;
     }
 
-    public static void main(String[] args) {
-        WeaponFileReader weaponFileReader = new WeaponFileReader();
-        List<Weapons> weapons = weaponFileReader.loadFromFile("src/Instructions/Weaponry.txt");
-
-        for (Weapons weapon : weapons) {
-            weapon.printStats();
-        }
-        System.out.println("--------------------");
-
-    }
-
 }

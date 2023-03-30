@@ -41,7 +41,6 @@ public class controls {
     public Positions moveRight(Positions pos){
         return new Positions(pos.getX_pos(), pos.getY_pos() + 1);
     }
-
     public Positions moveLeft(Positions pos){
         return new Positions(pos.getX_pos(), pos.getY_pos() - 1);
     }

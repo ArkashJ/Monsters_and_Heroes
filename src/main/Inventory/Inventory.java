@@ -83,5 +83,9 @@ public class Inventory implements IInventory{
             System.out.println(key);
         }
     }
+
+    public boolean contains(Items item) {
+        return inventory.containsKey(item.getName());
+    }
     // -------------------------------------------------------------------------------------------
 }

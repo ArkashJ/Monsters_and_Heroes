@@ -45,12 +45,23 @@ public class Cell implements ICell{
         return cell;
     }
 
+    public boolean isAccessible(){
+        return !type.equals("inaccessible");
+    }
+
+    public boolean isBattle() {
+        return battle;
+    }
+
     public void setCell(Cell cell) {
         this.cell = cell;
     }
 
     public void setBattle(boolean battle) {
         this.battle = battle;
+    }
+    public boolean isMarket(){
+        return type.equals("market");
     }
 
     public void enterCell(Heroes hero){
@@ -83,8 +94,5 @@ public class Cell implements ICell{
         }
     }
 
-    public boolean isMarket(){
-        return type.equals("market");
-    }
 
 }

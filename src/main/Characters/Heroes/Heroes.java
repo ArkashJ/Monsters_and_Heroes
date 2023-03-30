@@ -141,7 +141,7 @@ public class Heroes extends Characters implements IHeroes {
 
         System.out.println(tempName + "  |  " + tempLevel + "  |  " + tempHP + "  |  " + tempMP + "  |  " + tempDexterity +
                 "  |  " + tempAgility + "  |  " + tempStrength + "  |  " + tempGold + "  |  ");
-         System.out.printf("The inventory currently is: ");
+         System.out.println("The inventory currently is: ");
          inventory.printInventory();
     }
     //------------------------------------------------------------------------------------------------------------------------

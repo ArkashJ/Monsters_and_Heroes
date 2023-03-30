@@ -9,4 +9,6 @@ public interface IInventory {
     int getSize();
     boolean isEmpty();
     void printInventory();
+
+    boolean contains(Items item);
 }
