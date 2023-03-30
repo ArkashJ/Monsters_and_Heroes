@@ -82,7 +82,7 @@ public class Monsters extends Characters implements IMonsters {
     }
 
     public void takeDamage(double damage) {
-        double damageTaken = Math.max(0, damage - this.defenceValue);
+        double damageTaken = Math.max(0, damage - this.defenceValue*0.1);
         this.HP = Math.max(0, this.HP - damageTaken);
     }
 

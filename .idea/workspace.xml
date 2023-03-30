@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99312434-18f3-4b0c-b185-5f8d70288819" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Read.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Battle/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Battle/GamePlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Battle/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Battle/Fight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Characters/Heroes/Heroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Characters/Heroes/Heroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Characters/Monsters/Monsters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Characters/Monsters/Monsters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Market/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Market/Market.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/StoryLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/StoryLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Teams/TeamHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Teams/TeamHeroes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +104,7 @@
       <workItem from="1680154378987" duration="404000" />
       <workItem from="1680154793455" duration="114000" />
       <workItem from="1680154910899" duration="548000" />
-      <workItem from="1680183690544" duration="677000" />
+      <workItem from="1680183690544" duration="2056000" />
     </task>
     <servers />
   </component>

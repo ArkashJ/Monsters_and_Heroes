@@ -72,6 +72,8 @@ public class Market implements IMarket {
                     break;
                 }
             }
+        }  else{
+            System.out.println(colorText("You do not have enough gold or level to buy this item.", "red"));
         }
     }
 
@@ -263,9 +265,9 @@ public class Market implements IMarket {
                     System.out.println(colorText("This item is not available for sale", "red"));
                     System.out.println("");
                 }
-                System.out.println("Want to buy another item? Enter 'buy' | To exit the market, enter 'exit'");
+                System.out.println("Want to buy another item? Enter 'buy' | Want to sell something? Enter 'sell' |To exit the market, enter 'exit'");
                 input = scanner.nextLine();
-                while (!input.equalsIgnoreCase("buy") && !input.equalsIgnoreCase("exit")) {
+                while (!input.equalsIgnoreCase("buy") && !input.equalsIgnoreCase("exit") && !input.equalsIgnoreCase("sell")) {
                     System.out.println("Please enter a valid input");
                     input = scanner.nextLine();
                 }
@@ -290,9 +292,9 @@ public class Market implements IMarket {
                     System.out.println(colorText("This item is not available for sale", "red"));
                     System.out.println("");
                 }
-                System.out.println("Want to sell another item? Enter 'sell' | To exit the market, enter 'exit'");
+                System.out.println("Want to sell another item? Enter 'sell'| Want to buy? Enter 'buy' | To exit the market, enter 'exit'");
                 input = scanner.nextLine();
-                while (!input.equalsIgnoreCase("sell") && !input.equalsIgnoreCase("exit")) {
+                while (!input.equalsIgnoreCase("sell") && !input.equalsIgnoreCase("exit") && !input.equalsIgnoreCase("buy")) {
                     System.out.println("Please enter a valid input");
                     input = scanner.nextLine();
                 }

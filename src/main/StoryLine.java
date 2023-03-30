@@ -5,7 +5,7 @@ import static main.Colors.colors.colorText;
 // Class to initialize a story line with time delays to increase the impact of the story
 public class StoryLine {
     public static void startStory(){
-        System.out.println( colorText("In a mystical world, sorcers, paladins and warrior clans kept fighting amongst themselves for dominance.", "red"));
+        System.out.println( colorText("In a mystical world, sorcers, paladins and warrior clans kept fighting amongst themselves for dominance.", "yellow"));
         delay(2);
         System.out.println(colorText("The world was in imbalance until one day ......" +
                 "They came!" +
@@ -22,7 +22,7 @@ public class StoryLine {
         System.out.println(colorText("Before you were dragged into this war, clan merchants and citizens collected ancient items like armors, potions" + '\n' +
                 "and spells to help you in your quest. As you go through the world, you will find your kin in markets where you can buy those materials" +'\n' +
                 "to beat those monsters", "purple"));
-        System.out.println(colorText("NOW GO AHEAD AND RECLAIM THIS WORLD", "black"));
+        System.out.println(colorText("NOW GO AHEAD AND RECLAIM THIS WORLD", "red"));
         delay(2);
     }
 

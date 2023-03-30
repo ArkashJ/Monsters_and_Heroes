@@ -2,6 +2,7 @@ package main.Characters.Heroes;
 
 import main.Characters.Characters;
 import main.Inventory.Inventory;
+import main.Items.Armors;
 import main.Positions.Positions;
 
 import static main.Colors.colors.colorText;
@@ -121,10 +122,18 @@ public class Heroes extends Characters implements IHeroes {
 //        return inventory.getArmorDefense();
 //    }
 
-    public void takeDamage(double damage, double armorDefense) {
-        damage = Math.max(0, damage - armorDefense);
-        this.HP = Math.max(0, this.HP - damage);
+    public void takeDamage(double damage) {
+//        double damageReduction = 0;
+//        if (armors != null) {
+//            damageReduction = armors.getDamageReduction()*0.1; // Assuming armor rating is in percentage
+//        }
+//        double reducedDamage = damage;
+        this.HP -= damage;
+        if (this.HP < 0) {
+            this.HP = 0;
+        }
     }
+
 
     //------------------------------------------------------------------------------------------------------------------------
     //print player statistics before the game starts
