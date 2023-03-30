@@ -22,13 +22,14 @@ public class MonsterFileReader implements Loadable<Monsters> {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split("\\s+|\\t");
+                // Monsters(String name, int level, double baseDamage, double defenceValue, double dodgeAgility, double HP)
                 Monsters monster = new Monsters(
                         data[0],
                         Integer.parseInt(data[1]),
                         Double.parseDouble(data[2]),
                         Double.parseDouble(data[3]),
                         Double.parseDouble(data[4]),
-                        100 * Integer.parseInt(data[4])
+                        100 * Integer.parseInt(data[1])
                 );
                 monstersList.add(monster);
             }

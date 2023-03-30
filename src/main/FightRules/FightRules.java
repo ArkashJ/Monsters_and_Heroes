@@ -57,6 +57,9 @@ public class FightRules implements IFightRules {
     // rules to find hero's attack damage if they have a weapon in their inventory
     public double attackDamage(Heroes hero){
         // attack damage calculation
+        if (hero.getInventory().getItem("Weapon") == null){
+            return hero.getStrength();
+        }
         Weapons weapon = (Weapons) hero.getInventory().getItem("Weapon");
         double weaponDamage = weapon.getDamage();
         double heroStrength = hero.getStrength();
@@ -150,6 +153,9 @@ public class FightRules implements IFightRules {
     //---------------------------------------------------------------------------------------------------------
 //     gold gained by selling an item
     public int goldSellingItem(Heroes hero, String itemName){
+        if (hero.getInventory().getItem(itemName) == null){
+            return 0;
+        }
         Items item = hero.getInventory().getItem(itemName);
         int itemPrice = item.getPrice();
         return itemPrice/2;
@@ -218,14 +224,16 @@ public class FightRules implements IFightRules {
     }
 
     public void useSpell(Heroes hero, Spells spell, Monsters monsters){
-        String spellName =  spell.getName();
+        if (hero.getMP() < spell.getManaCost()){
+            System.out.println("Not enough mana");
+            return;
+        }
+        hero.setMP(hero.getMP() - spell.getManaCost());
         double extraDamage = spell.getDamage();
-        double MonsterHP = monsters.getHP();
         monsters.takeDamage(extraDamage);
     }
 
     public void useWeapon(Heroes hero, Weapons weapon, Monsters monsters){
-        String weaponName =  weapon.getName();
         double extraDamage = weapon.getDamage();
         monsters.takeDamage(extraDamage);
     }

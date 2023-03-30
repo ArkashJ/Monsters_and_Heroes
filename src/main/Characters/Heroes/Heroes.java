@@ -130,8 +130,8 @@ public class Heroes extends Characters implements IHeroes {
     //print player statistics before the game starts
     public void printStats(){
         System.out.println("The stats for this player are as follows: ");
-        String tempName = colorText(String.format("Name: %s", name), "black");
-        String tempLevel = colorText(String.format("Level: %d", level), "red");
+        String tempName = colorText(String.format("Name: %s", name), "red");
+        String tempLevel = colorText(String.format("Level: %d", level), "black");
         String tempHP = colorText(String.format("HP: %,.3f", HP), "green");
         String tempMP = colorText(String.format("MP: %,.3f", MP), "blue");
         String tempDexterity = colorText(String.format("Dexterity: %,.3f", dexterity), "gray");

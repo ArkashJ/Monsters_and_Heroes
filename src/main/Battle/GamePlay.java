@@ -42,7 +42,7 @@ public class GamePlay {
     // --------------------------------------------------------------------------------------------------------------
     // making the game
     public void createNewGame() {
-//        startStory();
+        startStory();
         System.out.println("----------------------------------------------------------------------------------------");
         System.out.println("Welcome to the Monsters and Heroes game!");
         System.out.println("Enter the size of the world (e.g., 8 for an 8x8 world):");
@@ -74,12 +74,21 @@ public class GamePlay {
         // Implement hero selection logic here
         System.out.println("Paladins: ");
         Paladins = loadData.getPaladins();
+        for (Heroes paladin : Paladins) {
+            paladin.printStats();
+        }
         System.out.println("----------------------------------------");
         System.out.println("Sorcerers: ");
         Sorcerers = loadData.getSorcerers();
+        for (Heroes sorcerer : Sorcerers) {
+            sorcerer.printStats();
+        }
         System.out.println("----------------------------------------");
         System.out.println("Warriors: ");
         Warriors = loadData.getWarriors();
+        for (Heroes warrior : Warriors) {
+            warrior.printStats();
+        }
         System.out.println("----------------------------------------");
 
         // make a team of heroes

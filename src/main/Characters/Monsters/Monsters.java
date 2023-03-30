@@ -89,8 +89,8 @@ public class Monsters extends Characters implements IMonsters {
     //---------------------------------------------------------------------------------------------------------------------------------------
     public void printStats(){
         System.out.println("The stats for this monster are as follows: ");
-        String tempName = colorText(String.format("Name: %s", name), "black");
-        String tempLevel = colorText(String.format("Level: %d", level), "red");
+        String tempName = colorText(String.format("Name: %s", name),  "red");
+        String tempLevel = colorText(String.format("Level: %d", level), "black");
         String tempHP = colorText(String.format("HP: %,.3f", HP), "green");
         String tempBaseDamage = colorText(String.format("Base-Damage: %,.3f", baseDamage), "blue");
         String tempDefenceValue = colorText(String.format("Defence-Value: %,.3f", defenceValue), "yellow");
